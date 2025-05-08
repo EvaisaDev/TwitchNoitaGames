@@ -1,7 +1,7 @@
 {
     "bloodbath": {
         "title": "The Bloodbath",
-        "description": "As the witches stand on their podiums, the horn sounds.",
+        "description": "As the witches stand on their podiums, the music machine sounds.",
         "color": "#9f0000",
         "nonfatal": [
             {
@@ -701,7 +701,7 @@
     },
     "day": {
         "title": "Day {0}",
-        "description": null,
+        "description": "The sun rises over the arena.",
         "color": "#f9eb0f",
         "nonfatal": [
             {
@@ -1679,7 +1679,7 @@
     },
     "night": {
         "title": "Night {0}",
-        "description": null,
+        "description": "Night falls and the air grows cold.",
         "color": "#001233",
         "nonfatal": [
             {
@@ -2663,7 +2663,7 @@
     },
     "feast": {
         "title": "The Feast",
-        "description": "The Holy Mountain is replenished with food, supplies, weapons, and memoirs from the tributes' families.",
+        "description": "The Holy Mountain is replenished with food, supplies, weapons, and memoirs from the witches' families.",
         "color": "#39ea09",
         "nonfatal": [
             {
@@ -3322,13 +3322,14 @@
     },
     "arena": [
         {
-            "title": "Arena Event: Hämis Mutts",
+            "title": "Arena Event: Hämis",
             "description": "Hämis are let loose in the arena.",
             "color": "#ff9c0f",
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3386,7 +3387,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3444,7 +3446,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3502,7 +3505,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3560,7 +3564,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3612,76 +3617,19 @@
             ]
         },
         {
-            "title": "Arena Event: Fire",
-            "description": "A fire spreads throughout the arena.",
-            "color": "#ff9c0f",
-            "nonfatal": [
-                {
-                    "msg": "{0} survives.",
-                    "tributes": 1
-                }
-            ],
-            "fatal": [
-                {
-                    "msg": "The fire catches up to {0}, killing them.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "A fireball strikes {0}, killing them.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} kills {1} in order to utilize a body of water safely.",
-                    "tributes": 2,
-                    "killer": [
-                        0
-                    ],
-                    "killed": [
-                        1
-                    ]
-                },
-                {
-                    "msg": "{0} falls to the ground, but kicks {1} hard enough to then push {2.him_her} into the fire.",
-                    "tributes": 2,
-                    "killer": [
-                        0
-                    ],
-                    "killed": [
-                        1
-                    ]
-                },
-                {
-                    "msg": "{0} and {1} fail to find a safe spot and suffocate.",
-                    "tributes": 2,
-                    "killer": null,
-                    "killed": [
-                        0,
-                        1
-                    ]
-                }
-            ]
-        },
-        {
             "title": "Arena Event: Lukki",
             "description": "Lukki fill the arena.",
             "color": "#ff9c0f",
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
                 {
-                    "msg": "{0} dies from internal bleeding caused by a monkey mutt.",
+                    "msg": "{0} dies from internal bleeding caused by a Lukki bite.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -3734,7 +3682,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -3792,7 +3741,8 @@
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
-                    "tributes": 1
+                    "tributes": 1,
+					"hidden": true
                 }
             ],
             "fatal": [
@@ -4298,7 +4248,7 @@
         },
         {
             "title": "Arena Event: Hot",
-            "description": "Scorching heat envelops the arena; barren soil ignites on contact and water rapidly evaporates.",
+            "description": "The air feels hot.",
             "color": "#ff6600",
             "nonfatal": [
                 {
@@ -4421,159 +4371,6 @@
                 },
                 {
                     "msg": "{0} is overwhelmed by heatstroke in the scorching environment, succumbing to the extreme temperatures.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Arena Event: Cozy",
-            "description": "The arena becomes cozy and furnished. Furniture blocks paths, and Mimics lurk among the chests.",
-            "color": "#cfa87e",
-            "nonfatal": [
-                {
-                    "msg": "{0} rests briefly on a cozy bed.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} hides behind a wardrobe to avoid attention.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} climbs onto a dresser to spot nearby movement.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} rearranges furniture to block off a hallway.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} uses a bunk bed to hide supplies.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} discovers a regular chest and takes its contents safely.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} vaults over a table to escape a skirmish.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} pushes a chair aside, revealing a hidden passage.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} accidentally tips over a footlocker but is unharmed.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} carefully tests a chest and confirms it's not a Mimic.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} knocks over a decorative shelf, making a loud noise but avoiding detection.",
-                    "tributes": 1
-                },
-                {
-                    "msg": "{0} wedges a chair under a door handle, delaying pursuit.",
-                    "tributes": 1
-                }
-            ],
-            "fatal": [
-                {
-                    "msg": "{0} opens a chest, but it's a Mimic and they are killed instantly.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} is crushed as a stacked dresser collapses.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} is impaled on shattered furniture during a scuffle.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} topples a cabinet that pins and kills them.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} tries to flee through a pile of chairs and trips, breaking their neck.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} gets ambushed while looting what they thought was a normal chest.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} triggers a mimic swarm by disturbing a cluster of chests.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} bleeds out after falling onto a shattered table leg.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} attempts to hide inside a chest, but it's already occupied by a Mimic.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} takes a wrong step off a tall bookshelf and breaks their neck.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} panics and throws a bomb indoors, collapsing the entire room.",
-                    "tributes": 1,
-                    "killer": null,
-                    "killed": [
-                        0
-                    ]
-                },
-                {
-                    "msg": "{0} kicks open a chest, but a bomb inside explodes and kills them.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
