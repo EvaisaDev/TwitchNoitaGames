@@ -137,7 +137,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally steps on a unstable crystal.",
+                "msg": "{0} accidentally steps on an unstable crystal.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1364,7 +1364,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally detonates a unstable crystal while trying to set a trap.",
+                "msg": "{0} accidentally detonates an unstable crystal while trying to set a trap.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1392,7 +1392,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers a unstable crystal.",
+                "msg": "{0} accidentally triggers an unstable crystal.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2330,7 +2330,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally detonates a unstable crystal while trying to set a trap.",
+                "msg": "{0} accidentally detonates an unstable crystal while trying to set a trap.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2358,7 +2358,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers a unstable crystal.",
+                "msg": "{0} accidentally triggers an unstable crystal.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2719,7 +2719,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers a unstable crystal.",
+                "msg": "{0} accidentally triggers an unstable crystal.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
