@@ -1040,7 +1040,7 @@
                 ]
             },
             {
-                "msg": "{0} spears {1} in the abdomen.",
+                "msg": "{0} shoots {1} with a magic arrow in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2006,7 +2006,7 @@
                 ]
             },
             {
-                "msg": "{0} spears {1} in the abdomen.",
+                "msg": "{0} shoots {1} with a magic arrow in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2822,7 +2822,7 @@
                 ]
             },
             {
-                "msg": "{0} spears {1} in the abdomen.",
+                "msg": "{0} shoots {1} with a magic arrow in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
