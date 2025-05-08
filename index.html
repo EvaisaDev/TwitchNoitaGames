@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noita Hunger Games Simulator</title>
+  <style>
+    @font-face {
+      font-family: 'NoitaPixel';
+      src: url('./NoitaPixel.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'NoitaBlackletter';
+      src: url('./NoitaBlackletter-Regular.ttf') format('truetype');
+    }
+    html {
+      font-size: 18px;
+    }
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: 'NoitaPixel', sans-serif;
+      margin: 0;
+    }
+    #header {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+    }
+    #header input,
+    #header button {
+      background: #333;
+      border: none;
+      color: #fff;
+      padding: .7em 1em;
+      border-radius: 4px;
+      margin-right: .5em;
+      font-family: 'NoitaPixel', sans-serif;
+      font-size: 1rem;
+    }
+    #status {
+      font-weight: bold;
+      margin-right: 1em;
+      font-size: 1rem;
+    }
+    #joinPrompt {
+      text-align: center;
+      font-size: 8em;
+      margin: 0.2em 0;
+      font-family: 'NoitaBlackletter', cursive;
+    }
+    #dayDisplay {
+      text-align: center;
+      font-size: 1.5em;
+      margin: .5em 0;
+    }
+    #phaseDesc {
+      text-align: center;
+      margin: .2em 0;
+      font-size: 1rem;
+    }
+    #playersGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,100px);
+      gap: 1em;
+      padding: 1em;
+    }
+    .player img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+    .player .name {
+      text-align: center;
+      margin-top: .5em;
+      word-break: break-word;
+      font-size: 1rem;
+    }
+    #eventLog {
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .event {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .avatars {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5em;
+      margin-bottom: .5em;
+    }
+    .avatarWrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .avatarWrap img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .avatarWrap img.dead {
+      filter: grayscale(100%);
+    }
+    .text {
+      text-align: center;
+      white-space: pre-wrap;
+      font-family: 'NoitaPixel', sans-serif;
+      font-size: 1rem;
+    }
+    #proceedContainer {
+      text-align: center;
+      margin: 1em;
+      display: none;
+    }
+    #proceedButton {
+      background: #333;
+      border: none;
+      color: #fff;
+      padding: .7em 1em;
+      border-radius: 4px;
+      font-family: 'NoitaPixel', sans-serif;
+      font-size: 1rem;
+    }
+    #winnerScreen {
+      display: none;
+      text-align: center;
+      padding: 2em;
+    }
+    #winnerAvatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    #winnerText {
+      font-size: 2em;
+      margin: 1em 0;
+      font-family: 'NoitaBlackletter', cursive;
+    }
+    #placementsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,120px);
+      gap: 1.5em;
+      justify-content: center;
+      margin-top: 1em;
+    }
+    .placement {
+      text-align: center;
+      transition: opacity .3s;
+    }
+    .placement.dead {
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+    .placement img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .placement .rank {
+      font-size: 1.2em;
+      margin-top: .7em;
+      font-family: 'NoitaPixel', sans-serif;
+    }
+    .placement .name {
+      font-size: 1rem;
+      font-family: 'NoitaPixel', sans-serif;
+    }
+    .startNewButton {
+      margin-top: 2em;
+      padding: .7em 1.2em;
+      background: #333;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      font-family: 'NoitaPixel', sans-serif;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <input id="channelInput" placeholder="Enter Twitch channel">
+    <button id="connectButton">Connect</button>
+    <span id="status"></span>
+    <button id="startButton" disabled>Start Noita Games</button>
+    <button id="debugButton">Add Fake Witches</button>
+  </div>
+  <div id="joinPrompt">!play to join</div>
+  <div id="dayDisplay"></div>
+  <div id="phaseDesc"></div>
+  <div id="playersGrid"></div>
+  <div id="eventLog"></div>
+  <div id="proceedContainer">
+    <button id="proceedButton">Proceed to Next Phase</button>
+  </div>
+  <div id="winnerScreen">
+    <img id="winnerAvatar" src="">
+    <div id="winnerText"></div>
+    <hr style="width:50%;border-color:#555;margin:2em auto">
+    <div id="placementsGrid"></div>
+    <button class="startNewButton" id="newGameButton">Start New Game</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/tmi.js@latest/dist/tmi.min.js"></script>
+  <script>
+    const RENDER_DELAY = 300;
+    const fakeAvatars = ['images/pfp1.png','images/pfp2.png','images/pfp3.png','images/pfp4.png','images/pfp5.png','images/pfp6.png'];
+    const adjectives = ['Iron','Silver','Golden','Dusky','Silent','Swift','Fierce','Mystic','Crimson','Shadow'];
+    const nouns = ['Wolf','Raven','Phoenix','Dragon','Saber','Viper','Falcon','Stalker','Hunter','Wraith'];
+    function randomName() {
+      return adjectives[Math.floor(Math.random()*adjectives.length)] +
+             nouns[Math.floor(Math.random()*nouns.length)] +
+             Math.floor(Math.random()*1000);
+    }
+    function sleep(ms) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    let client, players = new Set(), participants = [], eventsData, eliminationOrder = [];
+    let currentDay = 1, stage = 0, daysSinceEvent = 0, consecutiveNoDeaths = 0, killedThisDay = [];
+    let gameStarted = false;
+
+    const chInput = document.getElementById('channelInput');
+    const btnConnect = document.getElementById('connectButton');
+    const status = document.getElementById('status');
+    const btnStart = document.getElementById('startButton');
+    const btnDebug = document.getElementById('debugButton');
+    const joinPrompt = document.getElementById('joinPrompt');
+    const procCont = document.getElementById('proceedContainer');
+    const btnProc = document.getElementById('proceedButton');
+    const dayDisplay = document.getElementById('dayDisplay');
+    const phaseDesc = document.getElementById('phaseDesc');
+    const playersGrid = document.getElementById('playersGrid');
+    const eventLog = document.getElementById('eventLog');
+    const winnerScreen = document.getElementById('winnerScreen');
+    const winnerAvatar = document.getElementById('winnerAvatar');
+    const winnerText = document.getElementById('winnerText');
+    const placementsGrid = document.getElementById('placementsGrid');
+    const newGameButton = document.getElementById('newGameButton');
+
+    fetch('events.json').then(r => r.json()).then(j => { eventsData = j; btnStart.disabled = false; });
+
+    window.addEventListener('load', () => {
+      const saved = localStorage.getItem('twitchChannel');
+      if (saved) { chInput.value = saved; connect(saved); }
+    });
+
+    btnConnect.addEventListener('click', () => {
+      const ch = chInput.value.trim().toLowerCase();
+      if (!ch) return;
+      localStorage.setItem('twitchChannel', ch);
+      connect(ch);
+    });
+
+    function connect(ch) {
+      if (client) client.disconnect();
+      players.clear();
+      playersGrid.innerHTML = '';
+      status.textContent = '';
+      gameStarted = false;
+      joinPrompt.style.display = 'block';
+      client = new tmi.Client({ channels: [ch] });
+      client.connect().then(() => {
+        status.textContent = 'Connected';
+        status.style.color = '#0f0';
+      }).catch(() => {
+        status.textContent = 'Error';
+        status.style.color = '#f00';
+      });
+      client.on('message', (_, tags, msg) => {
+        if (gameStarted) return;
+        if (msg.trim().toLowerCase() === '!play') {
+          const u = tags.username;
+          if (!players.has(u)) {
+            players.add(u);
+            addPlayer(u, tags.color);
+          }
+        }
+      });
+    }
+
+    btnStart.addEventListener('click', () => {
+      if (players.size < 1) {
+        alert('You must add at least one tribute to start the game.');
+        return;
+      }
+      gameStarted = true;
+      joinPrompt.style.display = 'none';
+      participants = Array.from(players).map(u => {
+        const el = document.querySelector(`[data-username="${u}"]`);
+        return {
+          username: u,
+          color: el.querySelector('.name').style.color,
+          avatar: el.querySelector('img').src,
+          alive: true
+        };
+      });
+      eliminationOrder = [];
+      currentDay = 1; stage = 0; daysSinceEvent = 0; consecutiveNoDeaths = 0;
+      playersGrid.style.display = 'none';
+      btnStart.style.display = 'none';
+      btnDebug.style.display = 'none';
+      procCont.style.display = 'block';
+      nextPhase();
+    });
+
+    btnDebug.addEventListener('click', () => {
+      for (let i = 0; i < 50; i++) {
+        let u;
+        do { u = randomName(); } while (players.has(u));
+        players.add(u);
+        addFakePlayer(u, '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0'));
+      }
+    });
+
+    btnProc.addEventListener('click', () => nextPhase());
+    newGameButton.addEventListener('click', () => window.location.reload());
+
+    async function nextPhase() {
+      if (participants.filter(p => p.alive).length <= 1) { showWinner(); return; }
+      switch (stage) {
+        case 0:
+          await runPhase('bloodbath');
+          stage = 1;
+          break;
+        case 1:
+          await runPhase('day');
+          stage = 2;
+          break;
+        case 2:
+          if (killedThisDay.length > 0) {
+            showFallen(currentDay);
+            stage = 3;
+          } else {
+            stage = 3;
+            await nextPhase();
+          }
+          break;
+        case 3:
+          await runPhase('night');
+          currentDay++;
+          stage = 1;
+          break;
+      }
+    }
+
+    function showFallen(day) {
+      eventLog.innerHTML = '';
+      dayDisplay.textContent = `Fallen Witches ${day}`;
+      dayDisplay.style.color = '#aaa';
+      phaseDesc.textContent = '';
+      const n = killedThisDay.length;
+      const txt = document.createElement('div');
+      txt.className = 'text';
+      txt.textContent = `${n} nuke${n !== 1 ? 's' : ''} can be heard going off in the distance.`;
+      const grid = document.createElement('div');
+      grid.className = 'avatars';
+      killedThisDay.forEach(u => {
+        const p = participants.find(x => x.username === u);
+        const wrap = document.createElement('div');
+        wrap.className = 'avatarWrap';
+        const img = document.createElement('img');
+        img.src = p.avatar;
+        img.className = 'dead';
+        const nm = document.createElement('div');
+        nm.className = 'text';
+        nm.textContent = p.username;
+        nm.style.color = p.color;
+        wrap.append(img, nm);
+        grid.appendChild(wrap);
+      });
+      eventLog.append(txt, grid);
+    }
+
+    function getStepType(isDay) {
+      const feastChance = 100 * (daysSinceEvent ** 2 / 55) + (9 / 55);
+      if (isDay && Math.random() * 100 < feastChance) {
+        daysSinceEvent = 0;
+        return 'feast';
+      }
+      if (daysSinceEvent > 0 && Math.floor(Math.random() * 20) === 0) {
+        daysSinceEvent = 0;
+        return 'arena';
+      }
+      daysSinceEvent++;
+      return isDay ? 'day' : 'night';
+    }
+
+    async function runPhase(type) {
+      killedThisDay = [];
+      eventLog.innerHTML = '';
+      let step = type;
+      if (type === 'day' || type === 'night') {
+        step = getStepType(type === 'day');
+      }
+      if (step === 'arena') {
+        const ev = eventsData.arena[Math.floor(Math.random() * eventsData.arena.length)];
+        phaseDesc.textContent = ev.description;
+        dayDisplay.textContent = ev.title;
+        dayDisplay.style.color = ev.color;
+        await runEvents(ev);
+      } else {
+        const ev = eventsData[step];
+        phaseDesc.textContent = ev.description || '';
+        const titleText = ev.title.replace('{0}', step === 'bloodbath' ? '' : currentDay);
+        dayDisplay.textContent = titleText;
+        dayDisplay.style.color = (step === 'night' ? '#88ccff' : ev.color);
+        await runEvents(ev);
+      }
+      consecutiveNoDeaths = killedThisDay.length === 0 ? consecutiveNoDeaths + 1 : 0;
+    }
+
+    async function runEvents(evObj) {
+      const aliveSet = new Set(participants.filter(p => p.alive));
+      const fatalBase = Math.floor(Math.random() * 3) + 2;
+      const fatalFactor = fatalBase + consecutiveNoDeaths + (stage === 0 ? 2 : 0);
+      const messages = [];
+      while (aliveSet.size > 0) {
+        const f = Math.floor(Math.random() * 11);
+        const arr = (f < fatalFactor && participants.filter(p => p.alive).length > 1 ? evObj.fatal : evObj.nonfatal)
+          .filter(a => a.tributes <= aliveSet.size);
+        if (!arr.length) break;
+        const action = arr[Math.floor(Math.random() * arr.length)];
+        const pick = [];
+        const avail = Array.from(aliveSet);
+        for (let i = 0; i < action.tributes; i++) {
+          const idx = Math.floor(Math.random() * avail.length);
+          pick.push(avail.splice(idx, 1)[0]);
+          aliveSet.delete(pick[pick.length - 1]);
+        }
+        let msg = action.msg;
+        pick.forEach((p, i) => msg = msg.replace(new RegExp(`\\{${i}\\}`, 'g'), p.username));
+        messages.push({ picks: pick, text: msg });
+        if (Array.isArray(action.killed)) {
+          action.killed.forEach(idx => {
+            const victim = pick[idx];
+            if (victim && victim.alive) {
+              victim.alive = false;
+              killedThisDay.push(victim.username);
+              eliminationOrder.push(victim.username);
+              const rem = document.querySelector(`[data-username="${victim.username}"]`);
+              if (rem) rem.remove();
+            }
+          });
+        }
+      }
+      for (const m of messages) {
+        const evEl = document.createElement('div');
+        evEl.className = 'event';
+        const avs = document.createElement('div');
+        avs.className = 'avatars';
+        m.picks.forEach(p => {
+          const wrap = document.createElement('div');
+          wrap.className = 'avatarWrap';
+          const img = document.createElement('img');
+          img.src = p.avatar;
+          wrap.append(img);
+          avs.appendChild(wrap);
+        });
+        const txt = document.createElement('div');
+        txt.className = 'text';
+        let formatted = m.text;
+        m.picks.forEach(p => {
+          formatted = formatted.split(p.username).join(`<span style="color:${p.color}">${p.username}</span>`);
+        });
+        txt.innerHTML = formatted;
+        evEl.append(avs, txt);
+        eventLog.appendChild(evEl);
+        await sleep(RENDER_DELAY);
+      }
+    }
+
+    function showWinner() {
+      procCont.style.display = 'none';
+      eventLog.innerHTML = '';
+      dayDisplay.textContent = '';
+      phaseDesc.textContent = '';
+      const winner = participants.filter(p => p.alive)[0] || {};
+      winnerAvatar.src = winner.avatar || '';
+      winnerText.textContent = `${winner.username} won the Noita Games!`;
+      placementsGrid.innerHTML = '';
+      const all = [winner.username, ...eliminationOrder.slice().reverse()];
+      all.forEach((u, i) => {
+        const p = participants.find(x => x.username === u);
+        const wrap = document.createElement('div');
+        wrap.className = 'placement';
+        if (!p.alive) wrap.classList.add('dead');
+        const img = document.createElement('img');
+        img.src = p.avatar;
+        const rank = document.createElement('div');
+        rank.className = 'rank';
+        rank.textContent = `#${i+1}`;
+        const nm = document.createElement('div');
+        nm.className = 'name';
+        nm.textContent = u;
+        nm.style.color = p.color;
+        wrap.append(img, rank, nm);
+        placementsGrid.appendChild(wrap);
+      });
+      winnerScreen.style.display = 'block';
+    }
+
+    function addPlayer(u, c) {
+      const cont = document.createElement('div');
+      cont.className = 'player';
+      cont.dataset.username = u;
+      const img = document.createElement('img');
+      img.src = 'https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/default-user-profile_image-70x70.png';
+      fetch(`https://decapi.me/twitch/avatar/${u}`, { mode: 'cors' })
+        .then(r => r.text())
+        .then(url => { if (url.startsWith('http')) img.src = url; });
+      const nm = document.createElement('div');
+      nm.className = 'name';
+      nm.textContent = u;
+      nm.style.color = c || '#fff';
+      cont.append(img, nm);
+      playersGrid.appendChild(cont);
+    }
+
+    function addFakePlayer(u, c) {
+      const cont = document.createElement('div');
+      cont.className = 'player';
+      cont.dataset.username = u;
+      const img = document.createElement('img');
+      img.src = fakeAvatars[Math.floor(Math.random() * fakeAvatars.length)];
+      const nm = document.createElement('div');
+      nm.className = 'name';
+      nm.textContent = u;
+      nm.style.color = c || '#fff';
+      cont.append(img, nm);
+      playersGrid.appendChild(cont);
+    }
+  </script>
+</body>
+</html>
