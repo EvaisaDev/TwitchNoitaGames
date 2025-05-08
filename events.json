@@ -651,6 +651,51 @@
                 "killed": [
                     1
                 ]
+            },
+            {
+                "msg":"{0} crosses the bridge and spawns Squidward. {0} doesn't have teleport bolt.",
+                "tributes":1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg":"{0} rolls 6 on chaos die. Tentacles were faster.",
+                "tributes":1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg":"{0} calculates wrong and uses cessation. Legends say {0} is still stuck there.",
+                "tributes":1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg":"While {1} drinking water {0} shifts water into cement.",
+                "tributes":2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    1
+                ]
+            },
+            {
+                "msg":"{0} accidentally uses \"The End Of Everything\". Sadly {1}, {2} and {3} were too close.",
+                "tributes":4,
+                "killer": null,
+                "killed": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
             }
         ]
     },
@@ -846,6 +891,18 @@
             {
                 "msg": "{0} questions their sanity.",
                 "tributes": 1
+            },
+            {
+                "msg":"{0} kicks the machine and music starts playing.",
+                "tributes":1
+            },
+            {
+                "msg":"{0} eats rainbow trail. Now {0} is controlling rainbow supply.",
+                "tributes":1
+            },
+            {
+                "msg":"{0} sees something moving and runs away. It was just a cute snail.",
+                "tributes":1
             }
         ],
         "fatal": [
@@ -1609,6 +1666,14 @@
                 "killed": [
                     1
                 ]
+            },
+            {
+                "msg":"{0} tries to levitate but didn't have enough energy. Who put the lava here ?",
+                "tributes":1,
+                "killer":null,
+                "killed":[
+                    0
+                ]
             }
         ]
     },
@@ -1800,6 +1865,10 @@
             {
                 "msg": "{0} questions their sanity.",
                 "tributes": 1
+            },
+            {
+                "msg":"{0} and {1} talks about how fair this world is.",
+                "tributes":2
             }
         ],
         "fatal": [
@@ -2562,6 +2631,32 @@
                 ],
                 "killed": [
                     1
+                ]
+            },
+            {
+                "msg":"{0} calculates wrong and uses cessation. Legends say {0} is still stuck there.",
+                "tributes":1,
+                "killer": null,
+                "killed":[
+                    0
+                ]
+            },
+            {
+                "msg":"While {1} drinking water {0} shifts water into cement.",
+                "tributes":2,
+                "killer":[
+                    0
+                ],
+                "killed":[
+                    1
+                ]
+            },
+            {
+                "msg":"{0} tinkers with wand. {0} shouldn't have put Touch of Gold there.",
+                "tributes":1,
+                "killer": null,
+                "killed":[
+                    0
                 ]
             }
         ]
