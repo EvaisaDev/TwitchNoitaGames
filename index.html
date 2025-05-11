@@ -419,7 +419,8 @@
         players            = new Set(),
         participants       = [],
         eventsData,
-        weaponsData,
+        itemsData,
+		materialsData,
         eliminationOrder   = [],
         killedThisDay      = [],
         deathEventsLog     = [],
@@ -459,10 +460,12 @@
     // Load events + weapons JSON
     Promise.all([
       fetch('events.json').then(r=>r.json()),
-      fetch('weapons.json').then(r=>r.json())
-    ]).then(([e,w])=>{
+      fetch('items.json').then(r=>r.json()),
+	  fetch('materials.json').then(r=>r.json())
+    ]).then(([e,w,m])=>{
       eventsData= e;
-      weaponsData= w;
+      itemsData= w;
+	  materialsData= m;
       btnStart.disabled = false;
     });
 
@@ -681,35 +684,64 @@
           aliveSet.delete(pick[pick.length-1]);
         }
 
-        // 1) substitute {0},{1},...
         let txt = action.msg;
         for(let i=0;i<pick.length;i++){
           txt = txt.replace(new RegExp(`\\{${i}\\}`, 'g'), pick[i].username);
         }
 
-        // 2) unified weapon wildcard logic:
         const killsCount = Array.isArray(action.killed)? action.killed.length : 0;
-		const types = ['blunt','cutting','piercing','wand','projectile','fire','explosive','electricity'];
-        [...types, "any"].forEach(cat => {
-          let placeholder, list;
-          if(cat === 'any'){
-            placeholder = '{any_weapon}';
-            // gather all categories except 'any'
-            list = types
-              .flatMap(c => weaponsData[c] || []);
-          } else {
-            placeholder = `{${cat}_weapon}`;
-            list = weaponsData[cat] || [];
-          }
-          if(txt.includes(placeholder)){
-            let candidates = list.filter(w => w.max_kills >= killsCount);
-            if(!candidates.length) candidates = list;
-            const chosen = candidates.length
-              ? candidates[Math.floor(Math.random()*candidates.length)].name
-              : 'weapon';
-            txt = txt.replace(new RegExp(escapeRegExp(placeholder), 'g'), chosen);
-          }
-        });
+		const types = [
+			"weapon_blunt",
+			"weapon_cutting",
+			"weapon_piercing",
+			"weapon_wand",
+			"weapon_projectile",
+			"weapon_fire",
+			"weapon_explosive",
+			"weapon_electricity", 
+			"sand_bad", 
+			"sand_good", 
+			"sand_neutral",
+			"liquid_water",
+			"liquid_poison",
+			"liquid_good",
+			"liquid_bad",
+			"liquid_neutral",
+		];
+		[...types, "weapon_any", "item_any", "material_any", "liquid_any", "sand_any"].forEach(cat => {
+		let placeholder = `{${cat}}`;
+		let list;
+		if (cat === "weapon_any") {
+			list = types.flatMap(c => itemsData[c] || []).filter(w => w.max_kills >= killsCount);
+		} else if (cat.startsWith("weapon_")) {
+			list = (itemsData[cat] || []).filter(w => w.max_kills >= killsCount);
+		} else if (cat === "material_any") {
+			list = types.flatMap(c => materialsData[c] || []);
+		} else if (cat === "liquid_any") {
+			list = types
+			.filter(c => c.startsWith("liquid_"))
+			.flatMap(c => materialsData[c] || []);
+		} else if (cat === "sand_any") {
+			list = types
+			.filter(c => c.startsWith("sand_"))
+			.flatMap(c => materialsData[c] || []);
+		} else if (cat.startsWith("material_") || cat.startsWith("liquid_") || cat.startsWith("sand_")) {
+			list = (materialsData[cat] || []);
+		} else if (cat === "item_any") {
+			list = types.flatMap(c => itemsData[c] || []);
+		} else {
+			list = itemsData[cat] || [];
+		}
+
+		if (txt.includes(placeholder)) {
+			const candidates = list;
+			const pick = candidates[Math.floor(Math.random() * candidates.length)];
+			const chosen = candidates.length
+			? (pick.name !== undefined ? pick.name : pick)
+			: placeholder;
+			txt = txt.replace(new RegExp(escapeRegExp(placeholder), 'g'), chosen);
+		}
+		});
 
         msgs.push({
           picks: pick,
@@ -865,65 +897,130 @@
       renderLeaderboard();
     }
 
-    function addPlayer(u,c){
-      initGlobal(u);
-      globalColors[u]=c||'#fff';
-      saveGlobalColors();
-      const cont=document.createElement('div');
-      cont.className='player';
-      cont.dataset.username=u;
-      const btn=document.createElement('button');
-      btn.className='removeBtn';
-      btn.textContent='×';
-      btn.addEventListener('click',()=>{
-        players.delete(u);
-        cont.remove();
-        btnStart.disabled = players.size===0;
-      });
-      const img=document.createElement('img');
-      img.src='https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/default-user-profile_image-70x70.png';
-      fetch(`https://decapi.me/twitch/avatar/${u}`,{mode:'cors'})
-        .then(r=>r.text()).then(url=>{ if(url.startsWith('http')) img.src=url; });
-      const nmC=document.createElement('div');
-      nmC.className='tooltip-container name';
-      const sp=document.createElement('span');
-      sp.textContent=u; sp.style.color=c||'#fff';
-      const tip=document.createElement('div');
-      tip.className='tooltip-box';
-      tip.innerText=getUserTooltipText(u,0,0);
-      nmC.append(sp,tip);
-      cont.append(btn,img,nmC);
-      playersGrid.appendChild(cont);
-    }
 
-    function addFakePlayer(u,c){
-      initGlobal(u);
-      globalColors[u]=c||'#fff';
-      saveGlobalColors();
-      const cont=document.createElement('div');
-      cont.className='player';
-      cont.dataset.username=u;
-      const btn=document.createElement('button');
-      btn.className='removeBtn';
-      btn.textContent='×';
-      btn.addEventListener('click',()=>{
-        players.delete(u);
-        cont.remove();
-        btnStart.disabled = players.size===0;
-      });
-      const img=document.createElement('img');
-      img.src=fakeAvatars[Math.floor(Math.random()*fakeAvatars.length)];
-      const nmC=document.createElement('div');
-      nmC.className='tooltip-container name';
-      const sp=document.createElement('span');
-      sp.textContent=u; sp.style.color=c||'#fff';
-      const tip=document.createElement('div');
-      tip.className='tooltip-box';
-      tip.innerText=getUserTooltipText(u,0,0);
-      nmC.append(sp,tip);
-      cont.append(btn,img,nmC);
-      playersGrid.appendChild(cont);
-    }
+
+
+	function addPlayer(u,c){
+		initGlobal(u);
+		
+		globalColors[u]=c||'#fff';
+
+		var color = globalColors[u];
+		let r, g, b;
+		if (color[0] === "#") {
+			if (color.length === 4) {
+				r = parseInt(color[1] + color[1], 16);
+				g = parseInt(color[2] + color[2], 16);
+				b = parseInt(color[3] + color[3], 16);
+			} else {
+				r = parseInt(color.slice(1, 3), 16);
+				g = parseInt(color.slice(3, 5), 16);
+				b = parseInt(color.slice(5, 7), 16);
+			}
+		} else if (color.startsWith("rgb")) {
+			[r, g, b] = color.match(/\d+/g).map(Number);
+		} else {
+			[r, g, b] = getComputedStyle(el).color.match(/\d+/g).map(Number);
+		}
+		const brightness = r * 0.299 + g * 0.587 + b * 0.114;
+
+		if (brightness < 60) {
+			// make color 50% brighter
+			r = Math.min(255, Math.floor(r * 1.5));
+			g = Math.min(255, Math.floor(g * 1.5));
+			b = Math.min(255, Math.floor(b * 1.5));
+			globalColors[u] = `rgb(${r}, ${g}, ${b})`;
+			c = globalColors[u];
+		}
+
+
+		saveGlobalColors();
+		const cont=document.createElement('div');
+		cont.className='player';
+		cont.dataset.username=u;
+		const btn=document.createElement('button');
+		btn.className='removeBtn';
+		btn.textContent='×';
+		btn.addEventListener('click',()=>{
+			players.delete(u);
+			cont.remove();
+			btnStart.disabled = players.size===0;
+		});
+		const img=document.createElement('img');
+		img.src='https://static-cdn.jtvnw.net/jtv_user_pictures/xarth/default-user-profile_image-70x70.png';
+		fetch(`https://decapi.me/twitch/avatar/${u}`,{mode:'cors'})
+			.then(r=>r.text()).then(url=>{ if(url.startsWith('http')) img.src=url; });
+		const nmC=document.createElement('div');
+		nmC.className='tooltip-container name';
+		const sp=document.createElement('span');
+		sp.textContent=u;
+		sp.style.color=c||'#fff';
+		const tip=document.createElement('div');
+		tip.className='tooltip-box';
+		tip.innerText=getUserTooltipText(u,0,0);
+		nmC.append(sp,tip);
+		cont.append(btn,img,nmC);
+		playersGrid.appendChild(cont);
+	}
+
+	function addFakePlayer(u,c){
+		initGlobal(u);
+		globalColors[u]=c||'#fff';
+
+		var color = globalColors[u];
+		let r, g, b;
+		if (color[0] === "#") {
+			if (color.length === 4) {
+				r = parseInt(color[1] + color[1], 16);
+				g = parseInt(color[2] + color[2], 16);
+				b = parseInt(color[3] + color[3], 16);
+			} else {
+				r = parseInt(color.slice(1, 3), 16);
+				g = parseInt(color.slice(3, 5), 16);
+				b = parseInt(color.slice(5, 7), 16);
+			}
+		} else if (color.startsWith("rgb")) {
+			[r, g, b] = color.match(/\d+/g).map(Number);
+		} else {
+			[r, g, b] = getComputedStyle(el).color.match(/\d+/g).map(Number);
+		}
+		const brightness = r * 0.299 + g * 0.587 + b * 0.114;
+
+		if (brightness < 60) {
+			// make color 50% brighter
+			r = Math.min(255, Math.floor(r * 1.5));
+			g = Math.min(255, Math.floor(g * 1.5));
+			b = Math.min(255, Math.floor(b * 1.5));
+			globalColors[u] = `rgb(${r}, ${g}, ${b})`;
+			c = globalColors[u];
+		}
+
+		saveGlobalColors();
+		const cont=document.createElement('div');
+		cont.className='player';
+		cont.dataset.username=u;
+		const btn=document.createElement('button');
+		btn.className='removeBtn';
+		btn.textContent='×';
+		btn.addEventListener('click',()=>{
+			players.delete(u);
+			cont.remove();
+			btnStart.disabled = players.size===0;
+		});
+		const img=document.createElement('img');
+		img.src=fakeAvatars[Math.floor(Math.random()*fakeAvatars.length)];
+		const nmC=document.createElement('div');
+		nmC.className='tooltip-container name';
+		const sp=document.createElement('span');
+		sp.textContent=u;
+		sp.style.color=c||'#fff';
+		const tip=document.createElement('div');
+		tip.className='tooltip-box';
+		tip.innerText=getUserTooltipText(u,0,0);
+		nmC.append(sp,tip);
+		cont.append(btn,img,nmC);
+		playersGrid.appendChild(cont);
+	}
   </script>
 </body>
 </html>

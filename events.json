@@ -5,23 +5,23 @@
         "color": "#9f0000",
         "nonfatal": [
             {
-                "msg": "{0} grabs {any_weapon}.",
+                "msg": "{0} grabs {weapon_any}.",
                 "tributes": 1
             },
             {
-                "msg": "{0} grabs a pouch and retreats.",
+                "msg": "{0} grabs a pouch of {sand_any} and retreats.",
                 "tributes": 1
             },
             {
-                "msg": "{0} and {1} fight for a pouch. {0} gives up and retreats.",
+                "msg": "{0} and {1} fight for a pouch of {sand_any}. {0} gives up and retreats.",
                 "tributes": 2
             },
             {
-                "msg": "{0} and {1} fight for a pouch. {1} gives up and retreats.",
+                "msg": "{0} and {1} fight for a pouch of {sand_any}. {1} gives up and retreats.",
                 "tributes": 2
             },
             {
-                "msg": "{0} finds {any_weapon}.",
+                "msg": "{0} finds {weapon_any}.",
                 "tributes": 1
             },
             {
@@ -29,15 +29,15 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} takes {any_weapon}.",
+                "msg": "{0} takes {weapon_any}.",
                 "tributes": 1
             },
             {
-                "msg": "{0} rips {any_weapon} out of {1}'s hands",
+                "msg": "{0} rips {weapon_any} out of {1}'s hands",
                 "tributes": 2
             },
             {
-                "msg": "{0} finds a flask full of water.",
+                "msg": "{0} finds a flask full of {liquid_any}.",
                 "tributes": 1
             },
             {
@@ -49,23 +49,23 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} grabs {any_weapon}.",
+                "msg": "{0} grabs {weapon_any}.",
                 "tributes": 1
             },
             {
-                "msg": "{0} takes {any_weapon} from inside the Holy Mountain.",
+                "msg": "{0} takes {weapon_any} from inside the Holy Mountain.",
                 "tributes": 1
             },
             {
-                "msg": "{0} finds a pouch full of gunpowder.",
+                "msg": "{0} finds a pouch full of {sand_any}.",
                 "tributes": 1
             },
             {
-                "msg": "{0} clutches a flask of healthium and runs away.",
+                "msg": "{0} clutches a flask of {liquid_any} and runs away.",
                 "tributes": 1
             },
             {
-                "msg": "{0} takes {any_weapon} from inside the Holy Mountain.",
+                "msg": "{0} takes {weapon_any} from inside the Holy Mountain.",
                 "tributes": 1
             },
             {
@@ -81,7 +81,7 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} finds a pouch full of monstrous powder.",
+                "msg": "{0} finds a pouch full of {sand_bad}.",
                 "tributes": 1
             },
             {
@@ -89,7 +89,7 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} breaks {1}'s nose for a pouch of rotten meat.",
+                "msg": "{0} breaks {1}'s nose for a pouch of {sand_any}.",
                 "tributes": 2
             },
             {
@@ -97,11 +97,11 @@
                 "tributes": 4
             },
             {
-                "msg": "{0} receives {any_weapon} from inside the Holy Mountain.",
+                "msg": "{0} receives {weapon_any} from inside the Holy Mountain.",
                 "tributes": 1
             },
             {
-                "msg": "{0} grabs a pouch of slimy meat while {1} gets a fishing rod.",
+                "msg": "{0} grabs a pouch of {sand_any} while {1} gets a fishing rod.",
                 "tributes": 2
             },
             {
@@ -113,7 +113,7 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} snatches {any_weapon}.",
+                "msg": "{0} snatches {weapon_any}.",
                 "tributes": 1
             }
         ],
@@ -127,7 +127,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -137,7 +137,7 @@
                 ]
             },
 			{
-                "msg": "{0} kills {1} with {projectile_weapon}.",
+                "msg": "{0} kills {1} with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -186,7 +186,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {projectile_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_projectile} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -224,7 +224,7 @@
                 ]
             },
             {
-                "msg": "{0} decapitates {1} with {cutting_weapon}.",
+                "msg": "{0} decapitates {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -234,7 +234,7 @@
                 ]
             },
             {
-                "msg": "{0} cuts {1} in the abdomen with {cutting_weapon}.",
+                "msg": "{0} cuts {1} in the abdomen with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -244,7 +244,7 @@
                 ]
             },
             {
-                "msg": "{0} sets {1} on fire with {fire_weapon}.",
+                "msg": "{0} sets {1} on fire with {weapon_fire}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -255,6 +255,14 @@
             },
             {
                 "msg": "{0} falls into a pit and dies.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+			{
+                "msg": "{0} is killed by a group of flying fish.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -292,7 +300,7 @@
                 ]
             },
             {
-                "msg": "{0} bashes {1}'s head in with {blunt_weapon}.",
+                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -302,7 +310,7 @@
                 ]
             },
             {
-                "msg": "{0} pushes {1} off a cliff during {cutting_weapon} fight.",
+                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -312,7 +320,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {projectile_weapon} into {1}'s chest.",
+                "msg": "{0} shoots {weapon_projectile} into {1}'s chest.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -380,7 +388,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -390,7 +398,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1} and {2}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
                 "tributes": 3,
                 "killer": [
                     0
@@ -401,7 +409,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, and {3}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
                 "tributes": 4,
                 "killer": [
                     0
@@ -413,7 +421,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, {3}, and {4}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
                 "tributes": 5,
                 "killer": [
                     0
@@ -456,7 +464,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {projectile_weapon}.",
+                "msg": "{0} kills {1} with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -500,7 +508,7 @@
                 ]
             },
             {
-                "msg": "{0} severely slices {1} with {cutting_weapon}.",
+                "msg": "{0} severely slices {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -529,8 +537,18 @@
                     1
                 ]
             },
+			{
+                "msg": "{0} kills {1} for their {weapon_any}.",
+                "tributes": 2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    1
+                ]
+            },
             {
-                "msg": "{0} shoots {projectile_weapon} at {1}, but misses and kills {2} instead",
+                "msg": "{0} shoots {weapon_projectile} at {1}, but misses and kills {2} instead",
                 "tributes": 3,
                 "killer": [
                     0
@@ -540,7 +558,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s neck, slowly killing them.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -560,7 +578,7 @@
                 ]
             },
             {
-                "msg": "{0} cuts {1} in the back with {cutting_weapon}.",
+                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -623,7 +641,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {projectile_weapon}.",
+                "msg": "{0} kills {1} with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -653,7 +671,7 @@
                 ]
             },
             {
-                "msg": "{0} repeatedly shoots {1} to death with {projectile_weapon}.",
+                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -687,7 +705,7 @@
                 ]
             },
             {
-                "msg":"While {1} drinking water {0} shifts water into cement.",
+                "msg":"While {1} is drinking water {0} shifts water into {liquid_bad}.",
                 "tributes":2,
                 "killer": [
                     0
@@ -751,7 +769,7 @@
                 "tributes": 2
             },
             {
-                "msg": "{0} builds {wand_weapon}.",
+                "msg": "{0} builds {weapon_wand}.",
                 "tributes": 1
             },
             {
@@ -775,19 +793,19 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} receives {wand_weapon} from an unknown sponsor.",
+                "msg": "{0} receives {weapon_wand} from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives a water potion from an unknown sponsor.",
+                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives a healthium potion from an unknown sponsor.",
+                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives meat from an unknown sponsor.",
+                "msg": "{0} receives {material_any} from an unknown sponsor.",
                 "tributes": 1
             },
             {
@@ -835,7 +853,7 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} tries to catch fish with {cutting_weapon}.",
+                "msg": "{0} tries to catch fish with {weapon_cutting}.",
                 "tributes": 1
             },
             {
@@ -895,7 +913,7 @@
                 "tributes": 5
             },
             {
-                "msg": "{0} receives {wand_weapon} from an unknown sponsor.",
+                "msg": "{0} receives {weapon_wand} from an unknown sponsor.",
                 "tributes": 1
             },
             {
@@ -927,7 +945,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {projectile_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_projectile} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -978,7 +996,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1014,7 +1032,7 @@
                 ]
             },
             {
-                "msg": "{0} drinks an acid potion",
+                "msg": "{0} drinks an {liquid_poison} potion.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1042,7 +1060,7 @@
                 ]
             },
             {
-                "msg": "{0} decapitates {1} with {cutting_weapon}.",
+                "msg": "{0} decapitates {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1060,7 +1078,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {1} with {projectile_weapon} in the abdomen.",
+                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1070,7 +1088,7 @@
                 ]
             },
             {
-                "msg": "{0} sets {1} on fire with {fire_weapon}.",
+                "msg": "{0} sets {1} on fire with {weapon_fire}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1118,7 +1136,7 @@
                 ]
             },
             {
-                "msg": "{0} bashes {1}'s head in with {blunt_weapon}.",
+                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1136,7 +1154,7 @@
                 ]
             },
             {
-                "msg": "{0} pushes {1} off a cliff during {cutting_weapon} fight.",
+                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1146,7 +1164,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s chest.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1166,7 +1184,7 @@
                 ]
             },
 			{
-                "msg": "{explosive_weapon} trap set by {0} kills {1}, {2}, and {3}",
+                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
                 "tributes": 4,
                 "killer": [
                     0
@@ -1244,7 +1262,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1254,7 +1272,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1} and {2}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
                 "tributes": 3,
                 "killer": [
                     0
@@ -1265,7 +1283,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, and {3}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
                 "tributes": 4,
                 "killer": [
                     0
@@ -1277,7 +1295,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, {3}, and {4}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
                 "tributes": 5,
                 "killer": [
                     0
@@ -1344,7 +1362,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1394,7 +1412,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally detonates {explosive_weapon} while trying to set a trap.",
+                "msg": "{0} accidentally detonates {weapon_explosive} while trying to set a trap.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1422,7 +1440,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers {explosive_weapon}.",
+                "msg": "{0} accidentally triggers {weapon_explosive}.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1430,7 +1448,7 @@
                 ]
             },
             {
-                "msg": "{0} severely slices {1} with {cutting_weapon}.",
+                "msg": "{0} severely slices {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1460,7 +1478,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} at {1}, but misses and kills {2} instead",
+                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
                 "tributes": 3,
                 "killer": [
                     0
@@ -1470,7 +1488,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s neck, slowly killing them.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1566,7 +1584,7 @@
                 ]
             },
             {
-                "msg": "{0} cuts {1} in the back with {cutting_weapon}.",
+                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1618,7 +1636,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1688,7 +1706,7 @@
                 ]
             },
             {
-                "msg": "{0} repeatedly shoots {1} to death with {projectile_weapon}.",
+                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1837,19 +1855,19 @@
                 "tributes": 2
             },
             {
-                "msg": "{0} receives {any_weapon} from an unknown sponsor.",
+                "msg": "{0} receives {weapon_any} from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives a water flask from an unknown sponsor.",
+                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives a healthium potion from an unknown sponsor.",
+                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
                 "tributes": 1
             },
             {
-                "msg": "{0} receives meat from an unknown sponsor.",
+                "msg": "{0} receives {material_any} from an unknown sponsor.",
                 "tributes": 1
             },
             {
@@ -1912,8 +1930,18 @@
                     1
                 ]
             },
+			{
+                "msg": "{0} pours {liquid_poison} in {1}'s mouth while they are sleeping.",
+                "tributes": 2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    1
+                ]
+            },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -1964,7 +1992,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2000,7 +2028,7 @@
                 ]
             },
             {
-                "msg": "{0} drinks an acid potion.",
+                "msg": "{0} drinks an {liquid_poison} potion.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2028,7 +2056,7 @@
                 ]
             },
             {
-                "msg": "{0} decapitates {1} with {cutting_weapon}.",
+                "msg": "{0} decapitates {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2046,7 +2074,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {1} with {projectile_weapon} in the abdomen.",
+                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2056,7 +2084,7 @@
                 ]
             },
             {
-                "msg": "{0} sets {1} on fire with {fire_weapon}.",
+                "msg": "{0} sets {1} on fire with {weapon_fire}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2104,7 +2132,7 @@
                 ]
             },
             {
-                "msg": "{0} bashes {1}'s head in with {blunt_weapon}.",
+                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2122,7 +2150,7 @@
                 ]
             },
             {
-                "msg": "{0} pushes {1} off a cliff during {cutting_weapon} fight.",
+                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2132,7 +2160,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s chest.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2152,7 +2180,7 @@
                 ]
             },
 			{
-                "msg": "{explosive_weapon} trap set by {0} kills {1}, {2}, and {3}",
+                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
                 "tributes": 4,
                 "killer": [
                     0
@@ -2230,7 +2258,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2240,7 +2268,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1} and {2}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
                 "tributes": 3,
                 "killer": [
                     0
@@ -2251,7 +2279,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, and {3}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
                 "tributes": 4,
                 "killer": [
                     0
@@ -2263,7 +2291,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, {3}, and {4}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
                 "tributes": 5,
                 "killer": [
                     0
@@ -2330,7 +2358,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2380,7 +2408,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally detonates {explosive_weapon} while trying to set a trap.",
+                "msg": "{0} accidentally detonates {weapon_explosive} while trying to set a trap.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2408,7 +2436,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers {explosive_weapon}.",
+                "msg": "{0} accidentally triggers {weapon_explosive}.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2416,7 +2444,7 @@
                 ]
             },
             {
-                "msg": "{0} severely slices {1} with {cutting_weapon}.",
+                "msg": "{0} severely slices {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2446,7 +2474,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} at {1}, but misses and kills {2} instead",
+                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
                 "tributes": 3,
                 "killer": [
                     0
@@ -2456,7 +2484,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s neck, slowly killing them.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2552,7 +2580,7 @@
                 ]
             },
             {
-                "msg": "{0} cuts {1} in the back with {cutting_weapon}.",
+                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2604,7 +2632,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2674,7 +2702,7 @@
                 ]
             },
             {
-                "msg": "{0} repeatedly shoots {1} to death with {projectile_weapon}.",
+                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2692,7 +2720,7 @@
                 ]
             },
             {
-                "msg":"While {1} drinking water {0} shifts water into cement.",
+                "msg":"While {1} is drinking water {0} shifts water into {liquid_bad}.",
                 "tributes":2,
                 "killer":[
                     0
@@ -2749,7 +2777,7 @@
                 "tributes": 2
             },
             {
-                "msg": "{0} takes {wand_weapon} leaning against the Holy Mountain.",
+                "msg": "{0} takes {weapon_wand} leaning against the Holy Mountain.",
                 "tributes": 1
             },
             {
@@ -2759,7 +2787,7 @@
         ],
         "fatal": [
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2769,7 +2797,7 @@
                 ]
             },
             {
-                "msg": "{0} accidentally triggers {explosive_weapon}.",
+                "msg": "{0} accidentally triggers {weapon_explosive}.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2808,7 +2836,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s head.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2854,7 +2882,7 @@
                 ]
             },
             {
-                "msg": "{0} decapitates {1} with {cutting_weapon}.",
+                "msg": "{0} decapitates {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2872,7 +2900,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {1} with {projectile_weapon} in the abdomen.",
+                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2882,7 +2910,7 @@
                 ]
             },
             {
-                "msg": "{0} sets {1} on fire with {fire_weapon}.",
+                "msg": "{0} sets {1} on fire with {weapon_fire}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2930,7 +2958,7 @@
                 ]
             },
             {
-                "msg": "{0} bashes {1}'s head in with {blunt_weapon}.",
+                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2940,7 +2968,7 @@
                 ]
             },
             {
-                "msg": "{0} pushes {1} off a cliff during {cutting_weapon} fight.",
+                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2950,7 +2978,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s chest.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -2970,7 +2998,7 @@
                 ]
             },
 			{
-                "msg": "{explosive_weapon} trap set by {0} kills {1}, {2}, and {3}",
+                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
                 "tributes": 4,
                 "killer": [
                     0
@@ -3038,7 +3066,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3048,7 +3076,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1} and {2}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
                 "tributes": 3,
                 "killer": [
                     0
@@ -3059,7 +3087,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, and {3}.",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
                 "tributes": 4,
                 "killer": [
                     0
@@ -3071,7 +3099,7 @@
                 ]
             },
             {
-                "msg": "{0} sets off {explosive_weapon}, killing {1}, {2}, {3}, and {4}",
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
                 "tributes": 5,
                 "killer": [
                     0
@@ -3114,7 +3142,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3168,7 +3196,7 @@
                 ]
             },
             {
-                "msg": "{0} severely slices {1} with {cutting_weapon}.",
+                "msg": "{0} severely slices {1} with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3198,7 +3226,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} at {1}, but misses and kills {2} instead",
+                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
                 "tributes": 3,
                 "killer": [
                     0
@@ -3208,7 +3236,7 @@
                 ]
             },
             {
-                "msg": "{0} shoots {piercing_weapon} into {1}'s neck, slowly killing them.",
+                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3256,7 +3284,7 @@
                 ]
             },
             {
-                "msg": "{0} cuts {1} in the back with {cutting_weapon}.",
+                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3299,7 +3327,7 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {any_weapon}.",
+                "msg": "{0} kills {1} with {weapon_any}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3369,7 +3397,7 @@
                 ]
             },
             {
-                "msg": "{0} repeatedly shoots {1} to death with {projectile_weapon}.",
+                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3895,7 +3923,7 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} drinks a worm blood potion.",
+                    "msg": "{0} drinks a {liquid_good} potion.",
                     "tributes": 1
                 },
                 {
@@ -3947,7 +3975,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} misfires {any_weapon} and kills themselves.",
+                    "msg": "{0} misfires {weapon_any} and kills themselves.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -4082,7 +4110,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} electrocutes themselves with a submerged {electricity_weapon}",
+                    "msg": "{0} electrocutes themselves with a submerged {weapon_electricity}",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -4149,7 +4177,7 @@
                     ]
                 },
 				{
-                    "msg": "{0} tries to kill {1} with {electricity_weapon}, but the water electrocutes them both.",
+                    "msg": "{0} tries to kill {1} with {weapon_electricity}, but the water electrocutes them both.",
                     "tributes": 2,
                     "killer": [
 						0
@@ -4179,7 +4207,7 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} uses {projectile_weapon} to trigger a trap from a distance.",
+                    "msg": "{0} uses {weapon_projectile} to trigger a trap from a distance.",
                     "tributes": 1
                 },
                 {
@@ -4199,11 +4227,11 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} uses {blunt_weapon} to probe for hidden explosives.",
+                    "msg": "{0} uses {weapon_blunt} to probe for hidden explosives.",
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} and {1} use {wand_weapon} to clear tripwires.",
+                    "msg": "{0} and {1} use {weapon_wand} to clear tripwires.",
                     "tributes": 2
                 },
                 {
@@ -4235,7 +4263,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} sets off a booby trap with {projectile_weapon}.",
+                    "msg": "{0} sets off a booby trap with {weapon_projectile}.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -4263,7 +4291,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} is blown to pieces by {explosive_weapon}.",
+                    "msg": "{0} is blown to pieces by {weapon_explosive}.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -4338,7 +4366,7 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} drinks a Water Potion, in order to cool down",
+                    "msg": "{0} drinks a {liquid_water} Potion, in order to cool down",
                     "tributes": 1
                 },
                 {
@@ -4384,7 +4412,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} drinks an unknown potion, which turns out to be Lava, leading to their demise.",
+                    "msg": "{0} drinks an unknown potion, which turns out to be {liquid_bad}, leading to their demise.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -4619,7 +4647,7 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} throws {wand_weapon} into a room, triggering an arc trap harmlessly.",
+                    "msg": "{0} throws {weapon_wand} into a room, triggering an arc trap harmlessly.",
                     "tributes": 1
                 },
                 {
@@ -4647,7 +4675,7 @@
                     "tributes": 3
                 },
                 {
-                    "msg": "{0} blocks a lightning strike from an Ukko using {blunt_weapon}.",
+                    "msg": "{0} blocks a lightning strike from an Ukko using {weapon_blunt}.",
                     "tributes": 1
                 },
                 {
@@ -4673,7 +4701,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} and {1} trigger an electricity trap while arguing over {any_weapon}, killing them both.",
+                    "msg": "{0} and {1} trigger an electricity trap while arguing over {weapon_any}, killing them both.",
                     "tributes": 2,
                     "killer": null,
                     "killed": [

@@ -1,5 +1,5 @@
 {
-	"blunt": [
+	"weapon_blunt": [
 		{
 			"name": "an emerald tablet",
 			"max_kills": 1
@@ -21,7 +21,7 @@
 			"max_kills": 1
 		}
 	],
-	"cutting": [
+	"weapon_cutting": [
 		{
 			"name": "a chainsaw wand",
 			"max_kills": 1
@@ -55,7 +55,7 @@
 			"max_kills": 3
 		}
 	],
-	"piercing": [
+	"weapon_piercing": [
 		{
 			"name": "a glowing lance",
 			"max_kills": 1
@@ -81,7 +81,7 @@
 			"max_kills": 1
 		}
 	],
-	"projectile": [
+	"weapon_projectile": [
 		{
 			"name": "a chain bolt",
 			"max_kills": 4
@@ -143,7 +143,7 @@
 			"max_kills": 1
 		}
 	],
-	"fire": [
+	"weapon_fire": [
 		{
 			"name": "a dynamite",
 			"max_kills": 2
@@ -185,7 +185,7 @@
 			"max_kills": 1
 		}
 	],
-	"electricity": [
+	"weapon_electricity": [
 		{
 			"name": "an electric arc triplicate bolt",
 			"max_kills": 3
@@ -223,7 +223,7 @@
 			"max_kills": 4
 		}
 	],
-	"explosive": [
+	"weapon_explosive": [
 		{
 			"name": "dynamite",
 			"max_kills": 2
@@ -273,7 +273,7 @@
 			"max_kills": 1
 		}
 	],
-	"wand": [
+	"weapon_wand": [
 		{
 			"name": "a wand",
 			"max_kills": 1
@@ -312,10 +312,6 @@
 		},
 		{
 			"name": "a magic missile wand",
-			"max_kills": 1
-		},
-		{
-			"name": "a healing wand",
 			"max_kills": 1
 		},
 		{

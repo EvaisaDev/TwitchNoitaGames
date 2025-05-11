@@ -1,0 +1,48 @@
+{
+	"sand_bad": [
+		"gunpowder",
+		"monstrous powder"
+	],
+	"sand_good": [
+		"meat",
+		"weird fungus"
+	],
+	"sand_neutral": [
+		"meat",
+		"sand",
+		"coal"
+	],
+	"liquid_bad": [
+		"toxic sludge",
+		"poison",
+		"lava",
+		"acid",
+		"instant deathium",
+		"cement"
+	],
+	"liquid_good": [
+		"pea soup",
+		"healthium",
+		"healthy porridge",
+		"ambrosia"
+	],
+	"liquid_neutral": [
+		"swamp",
+		"water",
+		"sludge",
+		"pea soup",
+		"blood"
+	],
+	"liquid_water": [
+		"swamp",
+		"water",
+		"sludge"
+	],
+	"liquid_poison": [
+		"toxic sludge",
+		"poison",
+		"lava",
+		"acid",
+		"instant deathium"
+	]
+}
