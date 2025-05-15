@@ -684,6 +684,16 @@
                     1
                 ]
             },
+			{
+                "msg": "{0} tries to kill {1} with {weapon_projectile} but they held the wand the wrong way.",
+                "tributes": 2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    0
+                ]
+            },
             {
                 "msg": "{0} and {1} fight for a pouch. {0} strangles {1} with the straps and runs.",
                 "tributes": 2,
@@ -700,6 +710,14 @@
                 "killer": [
                     1
                 ],
+                "killed": [
+                    0
+                ]
+            },
+			{
+                "msg": "{0} touches grass.. wait touch- of grass?",
+                "tributes": 1,
+                "killer": null,
                 "killed": [
                     0
                 ]
@@ -994,6 +1012,14 @@
 			},
 			{
                 "msg": "{0} buys a scratch-off, and wins a vacation to the lava lake!",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+			{
+                "msg": "{0} touches grass.. wait touch- of grass?",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
