@@ -126,6 +126,40 @@
                     0
                 ]
             },
+			{
+                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
+                "tributes": 2,
+                "killer": [
+					1
+				],
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} is impaled by a falling stalactite.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+			{
+                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
             {
                 "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
                 "tributes": 2,
@@ -931,6 +965,10 @@
             {
                 "msg":"{0} sees something moving and runs away. It was just a cute snail.",
                 "tributes":1
+            },
+			{
+                "msg": "{0} buys 20 scratch-offs, but wins nothing.",
+                "tributes": 1
             }
         ],
         "fatal": [
@@ -942,6 +980,40 @@
                 ],
                 "killed": [
                     1
+                ]
+            },
+			{
+                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
+                "tributes": 2,
+                "killer": [
+					1
+				],
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} buys a scratch-off, and wins a vacation to the lava lake!",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+			{
+                "msg": "{0} eats too much and explodes violently.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
                 ]
             },
             {
@@ -1032,7 +1104,7 @@
                 ]
             },
             {
-                "msg": "{0} drinks an {liquid_poison} potion.",
+                "msg": "{0} drinks a {liquid_poison} potion.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1931,6 +2003,56 @@
                 ]
             },
 			{
+                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
+                "tributes": 2,
+                "killer": [
+					1
+				],
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} discovers the solution to the eye puzzle, this knowledge drives them to kill themselves.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} tries to fight kolmi, unfortunately they suck at wand building.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "Trying to open the pause menu, {0} hits alt f4.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+			{
                 "msg": "{0} pours {liquid_poison} in {1}'s mouth while they are sleeping.",
                 "tributes": 2,
                 "killer": [
@@ -2028,7 +2150,7 @@
                 ]
             },
             {
-                "msg": "{0} drinks an {liquid_poison} potion.",
+                "msg": "{0} drinks a {liquid_poison} potion.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -2796,6 +2918,24 @@
                     1
                 ]
             },
+			{
+                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+			},
+			{
+                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
+                "tributes": 2,
+                "killer": [
+					1
+				],
+                "killed": [
+                    0
+                ]
+			},
             {
                 "msg": "{0} accidentally triggers {weapon_explosive}.",
                 "tributes": 1,
@@ -3464,6 +3604,114 @@
                     "killed": [
                         0,
                         1
+                    ]
+                }
+            ]
+        },
+		{
+            "title": "Arena Event: Angry Gods",
+            "description": "You have angered the gods",
+            "color": "#ff9c0f",
+            "nonfatal": [
+				{
+					"msg": "{0} throws their wand at stevari, stevari has a wand now. {0} escapes.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} successfully tablet kicks stevari.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} rat tunnels out of the holy mountain.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} statue kicks stevari, what a gamer.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} barely escapes.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} makes peace with the gods.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} invites skoude and stevari over for a beer, they wake up with a massive hangover.",
+                    "tributes": 1
+				},
+				{
+					"msg": "{0} digs out of the holy mountain.",
+                    "tributes": 1
+				}
+            ],
+            "fatal": [
+                {
+                    "msg": "{0} sucks at statue kicking.",
+                    "tributes": 1,
+                    "killer": null,
+                    "killed": [
+                        0
+                    ]
+                },
+				{
+                    "msg": "{0} tried to tablet kick, and hit themselves in the head.",
+                    "tributes": 1,
+                    "killer": null,
+                    "killed": [
+                        0
+                    ]
+                },
+				{
+                    "msg": "{0} throws {1} into stevari's line of sight, a cloud of blood is all that is left.",
+                    "tributes": 2,
+                    "killer": [0],
+                    "killed": [
+                        1
+                    ]
+                },
+				{
+                    "msg": "{0} throw an acid flask at stevari, they hit the ceiling and are melted by acid.",
+                    "tributes": 1,
+                    "killer": null,
+                    "killed": [
+                        0
+                    ]
+                },
+				{
+                    "msg": "{0} tries to hug stevari, thinking they are just misunderstood... They were not.",
+                    "tributes": 1,
+                    "killer": null,
+                    "killed": [
+                        0
+                    ]
+                },
+				{
+                    "msg": "{0} rage quits the game.",
+                    "tributes": 1,
+                    "killer": null,
+                    "killed": [
+                        0
+                    ]
+                },
+				{
+					"msg": "{0} casts earthquake, killing both stevari and themselves.",
+                    "tributes": 1,
+					"killer": null,
+                    "killed": [
+                        0
+                    ]
+				},
+				{
+                    "msg": "{0} enrages the gods, spawning skoude, which kills {0}, {1}, {2}, and {3}.",
+                    "tributes": 4,
+                    "killer": [0],
+                    "killed": [
+                        0,
+						1,
+						2,
+						3
                     ]
                 }
             ]
@@ -4412,7 +4660,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} drinks an unknown potion, which turns out to be {liquid_bad}, leading to their demise.",
+                    "msg": "{0} drinks a unknown potion, which turns out to be {liquid_bad}, leading to their demise.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
