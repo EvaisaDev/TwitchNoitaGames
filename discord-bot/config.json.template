@@ -1,0 +1,10 @@
+{
+  "token": "",
+  "arenaChannelId": "",
+  "commandChannelId": "",
+  "minPlayers": 5,
+  "joinTimerSeconds": 600,
+  "eventDelaySeconds": 2,
+  "phaseTitleDelaySeconds": 15,
+  "phaseDelaySeconds": 20
+}

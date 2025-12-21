@@ -1,0 +1,16 @@
+{
+  "name": "noita-games-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for running Noita Hunger Games simulations",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "better-sqlite3": "^9.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
