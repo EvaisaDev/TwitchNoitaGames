@@ -96,14 +96,28 @@ let joinTimer = null;
 let gameRunning = false;
 let recruitingPlayers = false;
 
-client.once('ready', () => {
+client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}`);
     
-    setInterval(async () => {
-        if (!gameRunning && !recruitingPlayers && joinedPlayers.size === 0) {
-            await autoStartGames();
-        }
-    }, 60 * 60 * 1000);
+    // Auto-start a game immediately on startup
+    await autoStartGames();
+    
+    // Schedule games to start at the top of every hour
+    function scheduleNextHourlyGame() {
+        const now = new Date();
+        const nextHour = new Date(now);
+        nextHour.setHours(now.getHours() + 1, 0, 0, 0);
+        const msUntilNextHour = nextHour - now;
+        
+        setTimeout(async () => {
+            if (!gameRunning && !recruitingPlayers && joinedPlayers.size === 0) {
+                await autoStartGames();
+            }
+            scheduleNextHourlyGame(); // Schedule the next one
+        }, msUntilNextHour);
+    }
+    
+    scheduleNextHourlyGame();
 });
 
 client.on('messageCreate', async (message) => {
@@ -153,7 +167,7 @@ async function handleStartGames(message) {
 
     const announceEmbed = new EmbedBuilder()
         .setTitle('The Noita Games are about to begin!')
-        .setDescription("Type '.join' in a command channel to volunteer as a tribute!")
+        .setDescription(`Type '.join' in <#${config.commandChannelId}> to volunteer as a tribute!`)
         .setColor(0x9b59b6);
 
     await arenaChannel.send({ embeds: [announceEmbed] });
@@ -175,7 +189,7 @@ async function autoStartGames() {
 
         const announceEmbed = new EmbedBuilder()
             .setTitle('The Noita Games are about to begin!')
-            .setDescription("Type '.join' in a command channel to volunteer as a tribute!")
+            .setDescription(`Type '.join' in <#${config.commandChannelId}> to volunteer as a tribute!`)
             .setColor(0x9b59b6);
 
         await arenaChannel.send({ embeds: [announceEmbed] });
