@@ -199,13 +199,15 @@ class NoitaGame {
             const killsCount = Array.isArray(action.killed) ? action.killed.length : 0;
             txt = this.replacePlaceholders(txt, killsCount);
 
-            if (action.killer && action.killed) {
-                action.killer.forEach(kr => {
-                    const kp = pick[kr];
-                    if (kp) {
-                        kp.kills += action.killed.length;
-                    }
-                });
+            if (action.killed && action.killed.length > 0) {
+                if (action.killer) {
+                    action.killer.forEach(kr => {
+                        const kp = pick[kr];
+                        if (kp) {
+                            kp.kills += action.killed.length;
+                        }
+                    });
+                }
 
                 action.killed.forEach(idx => {
                     const v = pick[idx];
