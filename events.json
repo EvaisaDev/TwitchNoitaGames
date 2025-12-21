@@ -5,10 +5,6 @@
         "color": "#9f0000",
         "nonfatal": [
             {
-                "msg": "{0} grabs {weapon_any}.",
-                "tributes": 1
-            },
-            {
                 "msg": "{0} grabs a pouch of {sand_any} and retreats.",
                 "tributes": 1
             },
@@ -49,23 +45,11 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} grabs {weapon_any}.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} takes {weapon_any} from inside the Holy Mountain.",
-                "tributes": 1
-            },
-            {
                 "msg": "{0} finds a pouch full of {sand_any}.",
                 "tributes": 1
             },
             {
                 "msg": "{0} clutches a flask of {liquid_any} and runs away.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} takes {weapon_any} from inside the Holy Mountain.",
                 "tributes": 1
             },
             {
@@ -124,60 +108,15 @@
                 "killer": null,
                 "killed": [
                     0
-                ]
+                ],
+                "order": -1
             },
-			{
-                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-			},
-			{
-                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
-                "tributes": 2,
-                "killer": [
-					1
-				],
-                "killed": [
-                    0
-                ]
-			},
-			{
+            {
                 "msg": "{0} is impaled by a falling stalactite.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
-                ]
-            },
-			{
-                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{0} kills {1} with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
                 ]
             },
             {
@@ -189,48 +128,7 @@
                 ]
             },
             {
-                "msg": "{0} catches {1} off guard and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} work together to drown {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} after engaging in a fist fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_projectile} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cannot handle the circumstances and commits suicide.",
+                "msg": "{0} cannot handle the circumstances jumps into a pool of lava.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -238,7 +136,7 @@
                 ]
             },
             {
-                "msg": "{0} bashes {1}'s head against a rock several times.",
+                "msg": "{0} kicks a Sädekivi, {1} happened to be in the path of the beam.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -248,54 +146,6 @@
                 ]
             },
             {
-                "msg": "{0} snaps {1}'s neck.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} decapitates {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cuts {1} in the abdomen with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets {1} on fire with {weapon_fire}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a pit and dies.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-			{
                 "msg": "{0} is killed by a group of flying fish.",
                 "tributes": 1,
                 "killer": null,
@@ -305,46 +155,6 @@
             },
             {
                 "msg": "{0} shoots {1} while their back is turned.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1}, and puts them out of their misery.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1} and leaves them to die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
                 "tributes": 2,
                 "killer": [
                     0
@@ -364,214 +174,6 @@
                 ]
             },
             {
-                "msg": "{0} is unable to convince {1} to not kill them.",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} convinces {1} not to kill them, only to kill them instead.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a lake and drowns.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} start fighting, but {1} runs away as {0} kills {2}.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with their own wand.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} overpowers {1}, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
-                "tributes": 5,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            },
-            {
-                "msg": "{0} kills {1} as they try to run.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} threaten a double suicide. It fails and they die.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} form a suicide pact, killing themselves.",
-                "tributes": 4,
-                "killer": null,
-                "killed": [
-                    0,
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {0} and {1} survive.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {2} and {3} survive.",
-                "tributes": 4,
-                "killer": [
-                    2,
-                    3
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attacks {1}, but {2} protects them, killing {0}",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} severely slices {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} with a rope",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} for their supplies.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
                 "msg": "{0} kills {1} for their {weapon_any}.",
                 "tributes": 2,
                 "killer": [
@@ -592,65 +194,12 @@
                 ]
             },
             {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
                 "msg": "{0} stabs {1} with a tree branch.",
                 "tributes": 2,
                 "killer": [
                     0
                 ],
                 "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {0} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {1} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {2} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0,
                     1
                 ]
             },
@@ -675,16 +224,6 @@
                 ]
             },
             {
-                "msg": "{0} kills {1} with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
                 "msg": "{0} tries to kill {1} with {weapon_projectile} but they held the wand the wrong way.",
                 "tributes": 2,
                 "killer": [
@@ -714,8 +253,8 @@
                     0
                 ]
             },
-			{
-                "msg": "{0} touches grass.. wait touch- of grass?",
+            {
+                "msg": "{0} crosses the bridge and spawns Squidward. {0} doesn't have teleport bolt.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -723,52 +262,16 @@
                 ]
             },
             {
-                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg":"{0} crosses the bridge and spawns Squidward. {0} doesn't have teleport bolt.",
-                "tributes":1,
+                "msg": "{0} rolls 6 on chaos die. Tentacles were faster.",
+                "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
             },
             {
-                "msg":"{0} rolls 6 on chaos die. Tentacles were faster.",
-                "tributes":1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg":"{0} calculates wrong and uses cessation. Legends say {0} is still stuck there.",
-                "tributes":1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg":"While {1} is drinking water {0} shifts water into {liquid_bad}.",
-                "tributes":2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg":"{0} accidentally uses \"The End Of Everything\". Sadly {1}, {2} and {3} were too close.",
-                "tributes":4,
+                "msg": "{0} accidentally uses \"The End Of Everything\". Sadly {1}, {2} and {3} were too close.",
+                "tributes": 4,
                 "killer": null,
                 "killed": [
                     0,
@@ -845,35 +348,11 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} receives {weapon_wand} from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} receives {material_any} from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
                 "msg": "{0} searches for a water source.",
                 "tributes": 1
             },
             {
-                "msg": "{0} defeats {1} in a fight, but spares their life.",
-                "tributes": 2
-            },
-            {
                 "msg": "{0} and {1} work together for the day.",
-                "tributes": 2
-            },
-            {
-                "msg": "{0} begs for {1} to kill them. They refuse, keeping {0} alive.",
                 "tributes": 2
             },
             {
@@ -897,10 +376,6 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} thinks about home.",
-                "tributes": 1
-            },
-            {
                 "msg": "{0} is pricked by thorns while picking berries.",
                 "tributes": 1
             },
@@ -919,10 +394,6 @@
             {
                 "msg": "{0} picks flowers.",
                 "tributes": 1
-            },
-            {
-                "msg": "{0} tends to {1}'s wounds.",
-                "tributes": 2
             },
             {
                 "msg": "{0} sees smoke rising in the distance, but decides not to investigate.",
@@ -965,52 +436,24 @@
                 "tributes": 5
             },
             {
-                "msg": "{0} receives {weapon_wand} from an unknown sponsor.",
+                "msg": "{0} kicks the machine and music starts playing.",
                 "tributes": 1
             },
             {
-                "msg": "{0} questions their sanity.",
+                "msg": "{0} eats rainbow trail. Now {0} is controlling rainbow supply.",
                 "tributes": 1
             },
             {
-                "msg":"{0} kicks the machine and music starts playing.",
-                "tributes":1
+                "msg": "{0} sees something moving and runs away. It was just a cute snail.",
+                "tributes": 1
             },
             {
-                "msg":"{0} eats rainbow trail. Now {0} is controlling rainbow supply.",
-                "tributes":1
-            },
-            {
-                "msg":"{0} sees something moving and runs away. It was just a cute snail.",
-                "tributes":1
-            },
-			{
                 "msg": "{0} buys 20 scratch-offs, but wins nothing.",
                 "tributes": 1
             }
         ],
         "fatal": [
             {
-                "msg": "{0} catches {1} off guard and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
-                "tributes": 2,
-                "killer": [
-					1
-				],
-                "killed": [
-                    0
-                ]
-			},
-			{
                 "msg": "{0} buys a scratch-off, and wins a vacation to the lava lake!",
                 "tributes": 1,
                 "killer": null,
@@ -1018,51 +461,23 @@
                     0
                 ]
             },
-			{
-                "msg": "{0} touches grass.. wait touch- of grass?",
+            {
+                "msg": "{0} learned what it means to anger the gods.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
             },
-			{
+            {
                 "msg": "{0} eats too much and explodes violently.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
-			},
-			{
-                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
             },
             {
-                "msg": "{0} shoots {weapon_projectile} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} begs for {1} to kill them. {1} reluctantly obliges, killing {0}",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-			{
                 "msg": "{0} begs for {1} to kill them. {1} lives for that shit, and kills {0}",
                 "tributes": 2,
                 "killer": [
@@ -1070,225 +485,6 @@
                 ],
                 "killed": [
                     0
-                ]
-            },
-            {
-                "msg": "{0} and {1} work together to drown {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} after engaging in a fist fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bleeds out due to untreated injuries.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} cannot handle the circumstances and commits suicide.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head against a rock several times.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} drinks a {liquid_poison} potion.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} silently snaps {1}'s neck.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} taints {1}'s food, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} decapitates {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} dies from an infection.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets {1} on fire with {weapon_fire}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a pit and dies.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} while their back is turned.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1}, and puts them out of their misery.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1} and leaves them to die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attempts to climb a tree, but falls to their death.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}'s unstable crystal kills {1}",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1, 2, 3
                 ]
             },
             {
@@ -1302,522 +498,10 @@
                 ]
             },
             {
-                "msg": "{0} is unable to convince {1} to not kill them.",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} convinces {1} not to kill them, only to kill them instead.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a lake and drowns.",
+                "msg": "{0} tries to levitate but didn't have enough energy. Who put the lava here ?",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} start fighting, but {1} runs away as {0} kills {2}.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with their own wand.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} overpowers {1}, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
-                "tributes": 5,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            },
-            {
-                "msg": "{0} kills {1} as they try to run.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} threaten a double suicide. It fails and they die.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} form a suicide pact, killing themselves.",
-                "tributes": 4,
-                "killer": null,
-                "killed": [
-                    0,
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} dies from hypothermia.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies from hunger.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies from thirst.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {0} and {1} survive.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {2} and {3} survive.",
-                "tributes": 4,
-                "killer": [
-                    2,
-                    3
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} dies trying to escape to a parallel world..",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies of dysentery.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} accidentally detonates {weapon_explosive} while trying to set a trap.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} attacks {1}, but {2} protects them, killing {0}",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} ambushes {1} and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} accidentally triggers {weapon_explosive}.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} severely slices {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} with a rope",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} for their supplies.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} successfully ambush and kill {3}, {4}, and {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3,
-                    4,
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} unsuccessfully ambush {3}, {4}, and {5}, who kill them instead.",
-                "tributes": 6,
-                "killer": [
-                    3,
-                    4,
-                    5
-                ],
-                "killed": [
-                    0,
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} wth a tree branch.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {2}.",
-                "tributes": 4,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {3}.",
-                "tributes": 4,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    3
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They refuse to kill, so {0} kills them instead.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} poisons {1}'s flask, but mistakes it for their own and dies.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} poisons {1}'s flask. They drink it and die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attempts to climb a tree, but falls on {1}, killing them both.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {0} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {1} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {2} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, {3}, and {4} track down and kill {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4
-                ],
-                "killed": [
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} track down and kill {4}.",
-                "tributes": 5,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3
-                ],
-                "killed": [
-                    4
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} track down and kill {3}.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} track down and kill {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} tracks down and kills {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg":"{0} tries to levitate but didn't have enough energy. Who put the lava here ?",
-                "tributes":1,
-                "killer":null,
-                "killed":[
                     0
                 ]
             }
@@ -1933,14 +617,6 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} defeats {1} in a fight, but spares their life.",
-                "tributes": 2
-            },
-            {
-                "msg": "{0} begs for {1} to kill them. They refuse, keeping {0} alive.",
-                "tributes": 2
-            },
-            {
                 "msg": "{0} destroys {1}'s supplies while they are asleep.",
                 "tributes": 2
             },
@@ -1957,32 +633,12 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} receives {material_any} from an unknown sponsor.",
-                "tributes": 1
-            },
-            {
                 "msg": "{0} tries to sing themselves to sleep.",
                 "tributes": 1
             },
             {
                 "msg": "{0} attempts to start a fire, but is unsuccessful.",
                 "tributes": 1
-            },
-            {
-                "msg": "{0} thinks about home.",
-                "tributes": 1
-            },
-            {
-                "msg": "{0} tends to {1}'s wounds.",
-                "tributes": 2
             },
             {
                 "msg": "{0} quietly hums.",
@@ -2001,7 +657,7 @@
                 "tributes": 2
             },
             {
-                "msg": "{0} convinces {1} to snuggle with them.",
+                "msg": "{0} convinces {1} to snuggle with them for warmth.",
                 "tributes": 2
             },
             {
@@ -2009,76 +665,36 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} questions their sanity.",
-                "tributes": 1
-            },
-            {
-                "msg":"{0} and {1} talks about how fair this world is.",
-                "tributes":2
+                "msg": "{0} and {1} talk about how fair this world is.",
+                "tributes": 2
             }
         ],
         "fatal": [
             {
-                "msg": "{0} catches {1} off guard and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
-                "tributes": 2,
-                "killer": [
-					1
-				],
-                "killed": [
-                    0
-                ]
-			},
-			{
                 "msg": "{0} discovers the solution to the eye puzzle, this knowledge drives them to kill themselves.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
-			},
-			{
-                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-			},
-			{
+            },
+            {
                 "msg": "{0} tries to fight kolmi, unfortunately they suck at wand building.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
-			},
-			{
+            },
+            {
                 "msg": "Trying to open the pause menu, {0} hits alt f4.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
                     0
                 ]
-			},
-			{
-                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
             },
-			{
+            {
                 "msg": "{0} pours {liquid_poison} in {1}'s mouth while they are sleeping.",
                 "tributes": 2,
                 "killer": [
@@ -2089,252 +705,14 @@
                 ]
             },
             {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} begs for {1} to kill them. {1} reluctantly obliges, killing {0}",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-			{
                 "msg": "{0} begs for {1} to kill them. {1} lives for that shit, and kills {0}, and {2} for good measure.",
                 "tributes": 3,
                 "killer": [
                     1
                 ],
                 "killed": [
-                    0, 2
-                ]
-            },
-            {
-                "msg": "{0} and {1} work together to drown {2}.",
-                "tributes": 3,
-                "killer": [
                     0,
-                    1
-                ],
-                "killed": [
                     2
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} after engaging in a fist fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bleeds out due to untreated injuries.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} cannot handle the circumstances and commits suicide.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head against a rock several times.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} drinks a {liquid_poison} potion.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} silently snaps {1}'s neck.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} taints {1}'s food, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} decapitates {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} dies from an infection.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets {1} on fire with {weapon_fire}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a pit and dies.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} while their back is turned.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1}, and puts them out of their misery.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1} and leaves them to die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attempts to climb a tree, but falls to their death.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}'s unstable crystal kills {1}",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1, 2, 3
                 ]
             },
             {
@@ -2348,16 +726,6 @@
                 ]
             },
             {
-                "msg": "{0} is unable to convince {1} to not kill them.",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
                 "msg": "{0} convinces {1} not to kill them, only for {0} to kill {1} instead.",
                 "tributes": 2,
                 "killer": [
@@ -2368,520 +736,10 @@
                 ]
             },
             {
-                "msg": "{0} falls into a lake and drowns.",
+                "msg": "{0} tinkers with their wand. {0} shouldn't have put Touch of Gold there.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} start fighting, but {1} runs away as {0} kills {2}.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with their own wand.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} overpowers {1}, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
-                "tributes": 5,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            },
-            {
-                "msg": "{0} kills {1} as they try to run.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} threaten a double suicide. It fails and they die.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} form a suicide pact, killing themselves.",
-                "tributes": 4,
-                "killer": null,
-                "killed": [
-                    0,
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} dies from hypothermia.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies from hunger.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies from thirst.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {0} and {1} survive.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {2} and {3} survive.",
-                "tributes": 4,
-                "killer": [
-                    2,
-                    3
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} dies trying to escape to a parallel world..",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} dies of dysentery.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} accidentally detonates {weapon_explosive} while trying to set a trap.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} attacks {1}, but {2} protects them, killing {0}",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} ambushes {1} and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} accidentally triggers {weapon_explosive}.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} severely slices {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} with a rope",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} for their supplies.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} successfully ambush and kill {3}, {4}, and {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3,
-                    4,
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} unsuccessfully ambush {3}, {4}, and {5}, who kill them instead.",
-                "tributes": 6,
-                "killer": [
-                    3,
-                    4,
-                    5
-                ],
-                "killed": [
-                    0,
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} wth a tree branch.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {2}.",
-                "tributes": 4,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {3}.",
-                "tributes": 4,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    3
-                ]
-            },
-            {
-                "msg": "{0} forces {1} to kill {2} or {3}. They refuse to kill, so {0} kills them instead.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} poisons {1}'s flask, but mistakes it for their own and dies.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} poisons {1}'s flask. They drink it and die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attempts to climb a tree, but falls on {1}, killing them both.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {0} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {1} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {2} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, {3}, and {4} track down and kill {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4
-                ],
-                "killed": [
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} track down and kill {4}.",
-                "tributes": 5,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3
-                ],
-                "killed": [
-                    4
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} track down and kill {3}.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} track down and kill {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} tracks down and kills {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg":"{0} calculates wrong and uses cessation. Legends say {0} is still stuck there.",
-                "tributes":1,
-                "killer": null,
-                "killed":[
-                    0
-                ]
-            },
-            {
-                "msg":"While {1} is drinking water {0} shifts water into {liquid_bad}.",
-                "tributes":2,
-                "killer":[
-                    0
-                ],
-                "killed":[
-                    1
-                ]
-            },
-            {
-                "msg":"{0} tinkers with their wand. {0} shouldn't have put Touch of Gold there.",
-                "tributes":1,
-                "killer": null,
-                "killed":[
                     0
                 ]
             }
@@ -2935,635 +793,7 @@
         ],
         "fatal": [
             {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-			},
-			{
-                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
-                "tributes": 2,
-                "killer": [
-					1
-				],
-                "killed": [
-                    0
-                ]
-			},
-            {
-                "msg": "{0} accidentally triggers {weapon_explosive}.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} catches {1} off guard and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} work together to drown {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} after engaging in a fist fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bleeds out due to untreated injuries.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} cannot handle the circumstances and commits suicide.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head against a rock several times.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} snaps {1}'s neck.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} decapitates {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} dies from an infection.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} shoots {1} with {weapon_projectile} in the abdomen.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets {1} on fire with {weapon_fire}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a pit and dies.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} while their back is turned.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1}, and puts them out of their misery.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely injures {1} and leaves them to die.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} bashes {1}'s head in with {weapon_blunt}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}'s unstable crystal kills {1}",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-			{
-                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1, 2, 3
-                ]
-            },
-            {
-                "msg": "{0} is unable to convince {1} to not kill them.",
-                "tributes": 2,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} convinces {1} not to kill them, only to kill them instead.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} falls into a lake and drowns.",
-                "tributes": 1,
-                "killer": null,
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} start fighting, but {1} runs away as {0} kills {2}.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with their own wand.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} overpowers {1}, killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
-                "tributes": 4,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
-                "tributes": 5,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2,
-                    3,
-                    4
-                ]
-            },
-            {
-                "msg": "{0} kills {1} as they try to run.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} threaten a double suicide. It fails and they die.",
-                "tributes": 2,
-                "killer": null,
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} form a suicide pact, killing themselves.",
-                "tributes": 4,
-                "killer": null,
-                "killed": [
-                    0,
-                    1,
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {0} and {1} survive.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2,
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} fight {2} and {3}. {2} and {3} survive.",
-                "tributes": 4,
-                "killer": [
-                    2,
-                    3
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} attacks {1}, but {2} protects them, killing {0}",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0
-                ]
-            },
-            {
-                "msg": "{0} ambushes {1} and kills them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} severely slices {1} with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} strangles {1} with a rope",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} for their supplies.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} successfully ambush and kill {3}, {4}, and {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3,
-                    4,
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} unsuccessfully ambush {3}, {4}, and {5}, who kill them instead.",
-                "tributes": 6,
-                "killer": [
-                    3,
-                    4,
-                    5
-                ],
-                "killed": [
-                    0,
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0} stabs {1} wth a tree branch.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {0} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {1} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    1
-                ],
-                "killed": [
-                    0,
-                    2
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} get into a fight. {2} triumphantly kills them both.",
-                "tributes": 3,
-                "killer": [
-                    2
-                ],
-                "killed": [
-                    0,
-                    1
-                ]
-            },
-            {
-                "msg": "{0} kills {1} with {weapon_any}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, {3}, and {4} track down and kill {5}.",
-                "tributes": 6,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3,
-                    4
-                ],
-                "killed": [
-                    5
-                ]
-            },
-            {
-                "msg": "{0}, {1}, {2}, and {3} track down and kill {4}.",
-                "tributes": 5,
-                "killer": [
-                    0,
-                    1,
-                    2,
-                    3
-                ],
-                "killed": [
-                    4
-                ]
-            },
-            {
-                "msg": "{0}, {1}, and {2} track down and kill {3}.",
-                "tributes": 4,
-                "killer": [
-                    0,
-                    1,
-                    2
-                ],
-                "killed": [
-                    3
-                ]
-            },
-            {
-                "msg": "{0} and {1} track down and kill {2}.",
-                "tributes": 3,
-                "killer": [
-                    0,
-                    1
-                ],
-                "killed": [
-                    2
-                ]
-            },
-            {
-                "msg": "{0} tracks down and kills {1}.",
-                "tributes": 2,
-                "killer": [
-                    0
-                ],
-                "killed": [
-                    1
-                ]
-            },
-            {
-                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
+                "msg": "{0} throws a potion at {1}",
                 "tributes": 2,
                 "killer": [
                     0
@@ -3583,7 +813,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -3634,43 +864,43 @@
                 }
             ]
         },
-		{
+        {
             "title": "Arena Event: Angry Gods",
             "description": "You have angered the gods",
             "color": "#ff9c0f",
             "nonfatal": [
-				{
-					"msg": "{0} throws their wand at stevari, stevari has a wand now. {0} escapes.",
+                {
+                    "msg": "{0} throws their wand at stevari, stevari has a wand now. {0} escapes.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} successfully tablet kicks stevari.",
+                },
+                {
+                    "msg": "{0} successfully tablet kicks stevari.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} rat tunnels out of the holy mountain.",
+                },
+                {
+                    "msg": "{0} rat tunnels out of the holy mountain.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} statue kicks stevari, what a gamer.",
+                },
+                {
+                    "msg": "{0} statue kicks stevari, what a gamer.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} barely escapes.",
+                },
+                {
+                    "msg": "{0} barely escapes.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} makes peace with the gods.",
+                },
+                {
+                    "msg": "{0} makes peace with the gods.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} invites skoude and stevari over for a beer, they wake up with a massive hangover.",
+                },
+                {
+                    "msg": "{0} invites skoude and stevari over for a beer, they wake up with a massive hangover.",
                     "tributes": 1
-				},
-				{
-					"msg": "{0} digs out of the holy mountain.",
+                },
+                {
+                    "msg": "{0} digs out of the holy mountain.",
                     "tributes": 1
-				}
+                }
             ],
             "fatal": [
                 {
@@ -3681,7 +911,7 @@
                         0
                     ]
                 },
-				{
+                {
                     "msg": "{0} tried to tablet kick, and hit themselves in the head.",
                     "tributes": 1,
                     "killer": null,
@@ -3689,15 +919,17 @@
                         0
                     ]
                 },
-				{
+                {
                     "msg": "{0} throws {1} into stevari's line of sight, a cloud of blood is all that is left.",
                     "tributes": 2,
-                    "killer": [0],
+                    "killer": [
+                        0
+                    ],
                     "killed": [
                         1
                     ]
                 },
-				{
+                {
                     "msg": "{0} throw an acid flask at stevari, they hit the ceiling and are melted by acid.",
                     "tributes": 1,
                     "killer": null,
@@ -3705,7 +937,7 @@
                         0
                     ]
                 },
-				{
+                {
                     "msg": "{0} tries to hug stevari, thinking they are just misunderstood... They were not.",
                     "tributes": 1,
                     "killer": null,
@@ -3713,7 +945,7 @@
                         0
                     ]
                 },
-				{
+                {
                     "msg": "{0} rage quits the game.",
                     "tributes": 1,
                     "killer": null,
@@ -3721,23 +953,25 @@
                         0
                     ]
                 },
-				{
-					"msg": "{0} casts earthquake, killing both stevari and themselves.",
+                {
+                    "msg": "{0} casts earthquake, killing both stevari and themselves.",
                     "tributes": 1,
-					"killer": null,
+                    "killer": null,
                     "killed": [
                         0
                     ]
-				},
-				{
+                },
+                {
                     "msg": "{0} enrages the gods, spawning skoude, which kills {0}, {1}, {2}, and {3}.",
                     "tributes": 4,
-                    "killer": [0],
+                    "killer": [
+                        0
+                    ],
                     "killed": [
                         0,
-						1,
-						2,
-						3
+                        1,
+                        2,
+                        3
                     ]
                 }
             ]
@@ -3750,7 +984,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -3809,7 +1043,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -3868,7 +1102,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -3927,7 +1161,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -3986,7 +1220,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -4045,7 +1279,7 @@
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -4098,13 +1332,13 @@
         },
         {
             "title": "Arena Event: Mass Hallucination",
-            "description": "The remaining tributes begin to hallucinate.",
+            "description": "Fungal spores fill the air, the tributes begin to hallucinate.",
             "color": "#ff9c0f",
             "nonfatal": [
                 {
                     "msg": "{0} survives.",
                     "tributes": 1,
-					"hidden": true
+                    "hidden": true
                 }
             ],
             "fatal": [
@@ -4450,14 +1684,15 @@
                         0
                     ]
                 },
-				{
+                {
                     "msg": "{0} tries to kill {1} with {weapon_electricity}, but the water electrocutes them both.",
                     "tributes": 2,
                     "killer": [
-						0
-					],
+                        0
+                    ],
                     "killed": [
-                        0, 1
+                        0,
+                        1
                     ]
                 },
                 {
@@ -4789,7 +2024,7 @@
                     "tributes": 1
                 },
                 {
-                    "msg": "{0} stumbles into a footlocker and knocks over a lamp.",
+                    "msg": "{0} stumbles into a table and knocks over a lamp.",
                     "tributes": 1
                 },
                 {
@@ -4894,7 +2129,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} tries to jump over a footlocker but trips and snaps their neck.",
+                    "msg": "{0} tries to jump over a landmine but trips and breaks their neck.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -5017,7 +2252,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} attempts to disable a laser trap and is vaporized in a mist of blood.",
+                    "msg": "{0} attempts to disable a laser trap and is vaporized in a fine mist.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -5227,5 +2462,880 @@
                 }
             ]
         }
-    ]
+    ],
+    "generic": {
+        "nonfatal": [
+            {
+                "msg": "{0} grabs {weapon_any}.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} takes {weapon_any} from inside the Holy Mountain.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} receives {weapon_wand} from an unknown sponsor.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} receives a {liquid_any} potion from an unknown sponsor.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} receives {material_any} from an unknown sponsor.",
+                "tributes": 1
+            },
+			{
+                "msg": "{0} discovers a parallel world.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} defeats {1} in a fight, but spares their life.",
+                "tributes": 2
+            },
+            {
+                "msg": "{0} begs for {1} to kill them. They refuse, keeping {0} alive.",
+                "tributes": 2
+            },
+            {
+                "msg": "{0} thinks about home.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} tends to {1}'s wounds.",
+                "tributes": 2
+            },
+            {
+                "msg": "{0} questions their sanity.",
+                "tributes": 1
+            }
+        ],
+        "fatal": [
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} discovers what {weapon_explosive} does, this did not end well for them.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0} gets stuck on a pixel and is killed by {1}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {weapon_piercing} into {1}'s head.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} kills {1} with {weapon_projectile}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} catches {1} off guard and kills them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    2
+                ],
+                "killer": [
+                    0,
+                    1
+                ],
+                "msg": "{0} and {1} work together to drown {2}.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} strangles {1} after engaging in a fist fight.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {weapon_projectile} into {1}'s head.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} statue kicks {1} to death.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} sets {1} on fire with {weapon_fire}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} falls into a pit and dies.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} severely injures {1}, and puts them out of their misery.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} severely injures {1} and leaves them to die.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} hits {1}'s in the head with {weapon_blunt}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} pushes {1} off a cliff during {weapon_cutting} fight.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0} is unable to convince {1} to not kill them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} convinces {1} not to kill them, only to kill them instead.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} falls into a lake and drowns.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    2
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0}, {1}, and {2} start fighting, but {1} runs away as {0} kills {2}.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} kills {1} with their own wand.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} overpowers {1}, killing them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} sets off {weapon_explosive}, killing {1}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1,
+                    2
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} sets off {weapon_explosive}, killing {1} and {2}",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    1,
+                    2,
+                    3
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, and {3}.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} sets off {weapon_explosive}, killing {1}, {2}, {3}, and {4}",
+                "tributes": 5
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} kills {1} as they try to run.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0,
+                    1
+                ],
+                "killer": null,
+                "msg": "{0} and {1} threaten to jump off the cliff together, no one would listen and they both die.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "killer": null,
+                "msg": "{0}, {1}, {2}, and {3} form a pact and decide to jump in a vat of acid together.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    2,
+                    3
+                ],
+                "killer": [
+                    0,
+                    1
+                ],
+                "msg": "{0} and {1} fight {2} and {3}. {0} and {1} survive.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    0,
+                    1
+                ],
+                "killer": [
+                    2,
+                    3
+                ],
+                "msg": "{0} and {1} fight {2} and {3}. {2} and {3} survive.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": [
+                    2
+                ],
+                "msg": "{0} attacks {1}, but {2} protects them, killing {0}",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} severely slices {1} with {weapon_cutting}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} strangles {1} with a rope",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} kills {1} for their supplies.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {weapon_piercing} into {1}'s neck, slowly killing them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} cuts {1} in the back with {weapon_cutting}.",
+                "tributes": 2
+            },
+			{
+                "msg": "{0} cuts {1} heavily with {weapon_cutting}.",
+                "tributes": 2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    1
+                ]
+            },
+            {
+                "killed": [
+                    1,
+                    2
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0}, {1}, and {2} get into a fight. {0} triumphantly kills them both.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    0,
+                    2
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0}, {1}, and {2} get into a fight. {1} triumphantly kills them both.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    0,
+                    1
+                ],
+                "killer": [
+                    2
+                ],
+                "msg": "{0}, {1}, and {2} get into a fight. {2} triumphantly kills them both.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} touches grass.. wait touch- of grass?",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} repeatedly shoots {1} to death with {weapon_projectile}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} calculates wrong and uses cessation. Legends say {0} is still stuck there.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "While {1} is drinking water {0} shifts water into {liquid_bad}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0} begs for {1} to kill them. {1} reluctantly obliges, killing {0}",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} bleeds out due to untreated injuries.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} cannot handle the circumstances and jumps into a pool of lava.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} drinks a {liquid_poison} potion.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} silently kills {1}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} taints {1}'s food, killing them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} Severely slices {1} with {weapon_cutting}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies from an infection.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {1} with {weapon_projectile} multiple times.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} stabs {1} while their back is turned.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} attempts to climb a tree, but falls to their death.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {weapon_piercing} into {1}'s chest.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0}'s unstable crystal kills {1}",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1,
+                    2,
+                    3
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{weapon_explosive} trap set by {0} kills {1}, {2}, and {3}",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies from hypothermia.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies from hunger.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies from thirst.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} kills {1} with {weapon_any}.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies trying to escape to a parallel world..",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} dies of dysentery.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} accidentally detonates {weapon_explosive} while trying to set a trap.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} ambushes {1} and kills them.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} accidentally triggers {weapon_explosive}.",
+                "tributes": 1
+            },
+            {
+                "killed": [
+                    2
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} shoots {weapon_piercing} at {1}, but misses and kills {2} instead",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    3,
+                    4,
+                    5
+                ],
+                "killer": [
+                    0,
+                    1,
+                    2
+                ],
+                "msg": "{0}, {1}, and {2} successfully ambush and kill {3}, {4}, and {5}.",
+                "tributes": 6
+            },
+            {
+                "killed": [
+                    0,
+                    1,
+                    2
+                ],
+                "killer": [
+                    3,
+                    4,
+                    5
+                ],
+                "msg": "{0}, {1}, and {2} unsuccessfully ambush {3}, {4}, and {5}, who kill them instead.",
+                "tributes": 6
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} stabs {1} wth a tree branch.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    2
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {2}.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    3
+                ],
+                "killer": [
+                    1
+                ],
+                "msg": "{0} forces {1} to kill {2} or {3}. They decide to kill {3}.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} forces {1} to kill {2} or {3}. They refuse to kill, so {0} kills them instead.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} poisons {1}'s flask, but mistakes it for their own and dies.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} poisons {1}'s flask. They drink it and die.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    0,
+                    1
+                ],
+                "killer": null,
+                "msg": "{0} attempts to climb a tree, but falls on {1}, killing them both.",
+                "tributes": 2
+            },
+            {
+                "killed": [
+                    5
+                ],
+                "killer": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "msg": "{0}, {1}, {2}, {3}, and {4} track down and kill {5}.",
+                "tributes": 6
+            },
+            {
+                "killed": [
+                    4
+                ],
+                "killer": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "msg": "{0}, {1}, {2}, and {3} track down and kill {4}.",
+                "tributes": 5
+            },
+            {
+                "killed": [
+                    3
+                ],
+                "killer": [
+                    0,
+                    1,
+                    2
+                ],
+                "msg": "{0}, {1}, and {2} track down and kill {3}.",
+                "tributes": 4
+            },
+            {
+                "killed": [
+                    2
+                ],
+                "killer": [
+                    0,
+                    1
+                ],
+                "msg": "{0} and {1} track down and kill {2}.",
+                "tributes": 3
+            },
+            {
+                "killed": [
+                    1
+                ],
+                "killer": [
+                    0
+                ],
+                "msg": "{0} tracks down and kills {1}.",
+                "tributes": 2
+            }
+        ]
+    }
 }

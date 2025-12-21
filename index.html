@@ -670,10 +670,14 @@
       const factor=base+consecutiveNoDeaths+(stage===0?2:0);
       const msgs=[];
 
+      const genericEvents = eventsData.generic || { nonfatal: [], fatal: [] };
+
       while(aliveSet.size>0){
         const roll=Math.floor(Math.random()*11);
-        const pool=((roll<factor && participants.filter(p=>p.alive).length>1)
-          ? evObj.fatal : evObj.nonfatal)
+        const useFatal = roll<factor && participants.filter(p=>p.alive).length>1;
+        const phasePool = (useFatal ? evObj.fatal : evObj.nonfatal) || [];
+        const genericPool = (useFatal ? genericEvents.fatal : genericEvents.nonfatal) || [];
+        const pool = [...phasePool, ...genericPool]
           .filter(a=>a.tributes<=aliveSet.size);
         if(!pool.length) break;
         const action=pool[Math.floor(Math.random()*pool.length)];
