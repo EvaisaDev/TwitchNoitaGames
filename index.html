@@ -647,7 +647,13 @@
       eventLog.innerHTML='';
       let step=type;
       if(type==='day'||type==='night') step=getStepType(type==='day');
-      if(step==='arena'){
+      if(step==='feast'){
+        const ev=eventsData.feast;
+        phaseDesc.textContent=ev.description;
+        dayDisplay.textContent=ev.title;
+        dayDisplay.style.color=ev.color;
+        await runEvents(ev);
+      } else if(step==='arena'){
         const ev=eventsData.arena[Math.floor(Math.random()*eventsData.arena.length)];
         phaseDesc.textContent=ev.description;
         dayDisplay.textContent=ev.title;
@@ -671,14 +677,24 @@
       const msgs=[];
 
       const genericEvents = eventsData.generic || { nonfatal: [], fatal: [] };
+      const isArenaEvent = evObj.title && evObj.title.startsWith('Arena Event');
+      const isFeastEvent = evObj.title && evObj.title === 'The Feast';
+      const isBloodbathEvent = evObj.title && evObj.title === 'The Bloodbath';
 
       while(aliveSet.size>0){
         const roll=Math.floor(Math.random()*11);
         const useFatal = roll<factor && participants.filter(p=>p.alive).length>1;
         const phasePool = (useFatal ? evObj.fatal : evObj.nonfatal) || [];
         const genericPool = (useFatal ? genericEvents.fatal : genericEvents.nonfatal) || [];
-        const pool = [...phasePool, ...genericPool]
-          .filter(a=>a.tributes<=aliveSet.size);
+        
+        let pool;
+        if (isArenaEvent || isFeastEvent || isBloodbathEvent) {
+          const weightedPhasePool = Array(10).fill(phasePool).flat();
+          pool = [...weightedPhasePool, ...genericPool];
+        } else {
+          pool = [...phasePool, ...genericPool];
+        }
+        pool = pool.filter(a=>a.tributes<=aliveSet.size);
         if(!pool.length) break;
         const action=pool[Math.floor(Math.random()*pool.length)];
         const pick=[]; const avail=Array.from(aliveSet);

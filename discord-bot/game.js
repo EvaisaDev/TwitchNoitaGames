@@ -78,12 +78,11 @@ class NoitaGame {
             case 1:
                 phaseKey = this.getStepType(true);
                 if (phaseKey === 'feast') {
-                    const arenaEvents = this.eventsData.arena;
-                    const ev = arenaEvents[Math.floor(Math.random() * arenaEvents.length)];
+                    phaseData = this.eventsData.feast;
                     return {
-                        title: ev.title,
-                        description: ev.description,
-                        color: ev.color
+                        title: phaseData.title,
+                        description: phaseData.description,
+                        color: phaseData.color
                     };
                 } else if (phaseKey === 'arena') {
                     const arenaEvents = this.eventsData.arena;
@@ -137,7 +136,9 @@ class NoitaGame {
                 break;
             case 1:
                 const stepType = this.getStepType(true);
-                if (stepType === 'arena' || stepType === 'feast') {
+                if (stepType === 'feast') {
+                    evObj = this.eventsData.feast;
+                } else if (stepType === 'arena') {
                     const arenaEvents = this.eventsData.arena;
                     evObj = arenaEvents[Math.floor(Math.random() * arenaEvents.length)];
                 } else {
@@ -168,6 +169,9 @@ class NoitaGame {
         const events = [];
 
         const genericEvents = this.eventsData.generic || { nonfatal: [], fatal: [] };
+        const isArenaEvent = evObj.title && evObj.title.startsWith('Arena Event');
+        const isFeastEvent = evObj.title && evObj.title === 'The Feast';
+        const isBloodbathEvent = evObj.title && evObj.title === 'The Bloodbath';
 
         while (aliveSet.size > 0) {
             const roll = Math.floor(Math.random() * 11);
@@ -175,8 +179,15 @@ class NoitaGame {
             
             const phasePool = (useFatal ? evObj.fatal : evObj.nonfatal) || [];
             const genericPool = (useFatal ? genericEvents.fatal : genericEvents.nonfatal) || [];
-            const pool = [...phasePool, ...genericPool]
-                .filter(a => a.tributes <= aliveSet.size);
+            
+            let pool;
+            if (isArenaEvent || isFeastEvent || isBloodbathEvent) {
+                const weightedPhasePool = Array(10).fill(phasePool).flat();
+                pool = [...weightedPhasePool, ...genericPool];
+            } else {
+                pool = [...phasePool, ...genericPool];
+            }
+            pool = pool.filter(a => a.tributes <= aliveSet.size);
             
             if (!pool.length) break;
 
