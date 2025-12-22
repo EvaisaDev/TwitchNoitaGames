@@ -182,7 +182,7 @@ class NoitaGame {
             
             let pool;
             if (isArenaEvent || isFeastEvent || isBloodbathEvent) {
-                const weightedPhasePool = Array(10).fill(phasePool).flat();
+                const weightedPhasePool = Array(10).fill(null).flatMap(() => phasePool);
                 pool = [...weightedPhasePool, ...genericPool];
             } else {
                 pool = [...phasePool, ...genericPool];
