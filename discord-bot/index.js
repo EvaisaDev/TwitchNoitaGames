@@ -146,7 +146,7 @@ client.on('messageCreate', async (message) => {
         await handleAddFake(message);
     } else if (content.startsWith('.leaderboard') || content.startsWith('.lb')) {
         await handleLeaderboard(message);
-    } else if (content === '.stats') {
+    } else if (content === '.ngstats') {
         await handleStats(message);
     }
 });
