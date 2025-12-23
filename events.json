@@ -140,7 +140,7 @@
                 ]
             },
             {
-                "msg": "{0} cannot handle the circumstances jumps into a pool of lava.",
+                "msg": "{0} cannot handle the circumstances and jumps into a pool of {liquid_bad}.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -1987,7 +1987,7 @@
                     ]
                 },
                 {
-                    "msg": "{0} uses Teleport Bolt but reappears inside a pool of lava, leading to instant death.",
+                    "msg": "{0} uses Teleport Bolt but reappears inside a pool of {liquid_bad}, leading to their demise.",
                     "tributes": 1,
                     "killer": null,
                     "killed": [
@@ -2542,6 +2542,10 @@
             {
                 "msg": "{0} questions their sanity.",
                 "tributes": 1
+            },
+			{
+                "msg": "{0} eats some fungus off the ground and has the best trip of their life.",
+                "tributes": 1
             }
         ],
         "fatal": [
@@ -2569,6 +2573,22 @@
                 ],
                 "killer": null,
                 "msg": "{0} saw a cute snail, unfortunately it was out for blood.",
+                "tributes": 1
+            },
+			{
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} mistakes their {liquid_bad} flask for their {liquid_good} and suffers the consequences.",
+                "tributes": 1
+            },
+			{
+                "killed": [
+                    0
+                ],
+                "killer": null,
+                "msg": "{0} mistakes their {liquid_bad} flask for their {liquid_water} and suffers the consequences.",
                 "tributes": 1
             },
             {
@@ -2831,8 +2851,18 @@
                     3
                 ],
                 "killer": null,
-                "msg": "{0}, {1}, {2}, and {3} form a pact and decide to jump in a vat of acid together.",
+                "msg": "{0}, {1}, {2}, and {3} form a pact and decide to jump in {liquid_bad} together.",
                 "tributes": 4
+            },
+			{
+                "killed": [
+                    0,
+                    1,
+                    2
+                ],
+                "killer": null,
+                "msg": "{0}, {1}, and {2} form a pact and decide to drink {liquid_bad}.",
+                "tributes": 3
             },
             {
                 "killed": [
@@ -3020,7 +3050,7 @@
                     0
                 ],
                 "killer": null,
-                "msg": "{0} cannot handle the circumstances and jumps into a pool of lava.",
+                "msg": "{0} cannot handle the circumstances and jumps into a pool of {liquid_bad}.",
                 "tributes": 1
             },
             {
