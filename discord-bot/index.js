@@ -148,7 +148,7 @@ client.on('messageCreate', async (message) => {
         await handleAddFake(message);
     } else if (content.startsWith('.leaderboard') || content.startsWith('.lb')) {
         await handleLeaderboard(message);
-    } else if (content === '.ngstats') {
+    } else if (content.startsWith('.ngstats')) {
         await handleStats(message);
     }
 });
@@ -526,7 +526,7 @@ async function handleLeaderboard(message) {
             const name = player.username;
             const value = player[sortField];
             const isSelf = player.user_id === userId;
-            return `**${rank}. ${isSelf ? '**' : ''}${name}${isSelf ? '**' : ''} - ${value} ${sortNames[sortBy].toLowerCase()}**`;
+            return `**${rank}.** ${isSelf ? '**' : ''}${name} - ${value} ${sortNames[sortBy].toLowerCase()}${isSelf ? '**' : ''}`;
         }).join('\n');
     } else {
         const top10 = allStats.slice(0, 10);
@@ -544,17 +544,21 @@ async function handleLeaderboard(message) {
         let contextText = '\n...\n';
         
         if (aboveEntry) {
-            contextText += `*${userRank}. ${aboveEntry.username} - ${aboveEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*\n`;
+            contextText += `**${userRank}.** *${aboveEntry.username} - ${aboveEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*\n`;
         }
         
-        contextText += `**${userRank + 1}. **${userEntry.username}** - ${userEntry[sortField]} ${sortNames[sortBy].toLowerCase()}**\n`;
+        contextText += `**${userRank + 1}.** **${userEntry.username} - ${userEntry[sortField]} ${sortNames[sortBy].toLowerCase()}**\n`;
         
         if (belowEntry) {
-            contextText += `*${userRank + 2}. ${belowEntry.username} - ${belowEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*`;
+            contextText += `**${userRank + 2}.** *${belowEntry.username} - ${belowEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*`;
         }
+
+
         
         leaderboardText = top10Text + contextText;
     }
+    
+    console.log(leaderboardText);
     
     const leaderboardEmbed = new EmbedBuilder()
         .setTitle(`Noita Games Leaderboard`)
