@@ -99,6 +99,18 @@
             {
                 "msg": "{0} snatches {weapon_any}.",
                 "tributes": 1
+            },
+            {
+                "msg": "{0} installs some mods stealthily.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} pets a hamis.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} turns out to be {1}, wearing a beaglepuss!",
+                "tributes": 2
             }
         ],
         "fatal": [
@@ -279,6 +291,24 @@
                     2,
                     3
                 ]
+            },
+            {
+                "msg": "{0} casts the spell that causes you to die.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} telefrags {1}.",
+                "tributes": 2,
+                "killer": [
+                    0
+                ],
+                "killed": [
+                    1
+                ]
             }
         ]
     },
@@ -449,6 +479,10 @@
             },
             {
                 "msg": "{0} buys 20 scratch-offs, but wins nothing.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} attempts to summon the buddy...",
                 "tributes": 1
             }
         ],
