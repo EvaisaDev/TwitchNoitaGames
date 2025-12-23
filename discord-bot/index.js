@@ -630,7 +630,7 @@ async function handleStats(message) {
             { name: 'Avg Days/Game', value: avgDaysPerGame, inline: true },
             { name: 'Avg Kills/Game', value: avgKillsPerGame, inline: true }
         )
-        .setFooter({ text: 'Use .stats [@user|username|userid] to view someone else\'s stats' })
+        .setFooter({ text: 'Use .ngstats [@user|username|userid] to view someone else\'s stats' })
         .setTimestamp();
     
     await message.reply({ embeds: [statsEmbed] });

@@ -255,7 +255,7 @@ class NoitaGame {
     }
 
     replacePlaceholders(txt, killsCount) {
-        const allCategories = [...this.types, "weapon_any", "item_any", "material_any", "liquid_any", "sand_any"];
+        const allCategories = [...this.types, "weapon_any", "item_any", "material_any", "liquid_any", "sand_any", "food_any"];
 
         for (const cat of allCategories) {
             const placeholder = `{${cat}}`;
