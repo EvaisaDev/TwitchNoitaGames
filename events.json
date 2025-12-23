@@ -2535,6 +2535,10 @@
                 "msg": "{0} thinks about home.",
                 "tributes": 1
             },
+			{
+                "msg": "{0} eats some {food_any}.",
+                "tributes": 1
+            },
             {
                 "msg": "{0} tends to {1}'s wounds.",
                 "tributes": 2

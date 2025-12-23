@@ -12,6 +12,16 @@
 		"sand",
 		"coal"
 	],
+	"food_good": [
+		"meat",
+		"healthy porridge"
+	],
+	"food_neutral": [
+		"weird fungus"
+	],
+	"food_bad": [
+		"spoiled meat"
+	],
 	"liquid_bad": [
 		"toxic sludge",
 		"poison",
@@ -24,14 +34,20 @@
 		"pea soup",
 		"healthium",
 		"healthy porridge",
-		"ambrosia"
+		"ambrosia",
+		"sima",
+		"whiskey",
+		"milk"
 	],
 	"liquid_neutral": [
 		"swamp",
 		"water",
 		"sludge",
 		"pea soup",
-		"blood"
+		"blood",
+		"sima",
+		"whiskey",
+		"milk"
 	],
 	"liquid_water": [
 		"swamp",

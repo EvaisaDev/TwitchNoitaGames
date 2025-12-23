@@ -737,6 +737,9 @@
 			"liquid_good",
 			"liquid_bad",
 			"liquid_neutral",
+			"food_good",
+			"food_neutral",
+			"food_bad",
 		];
 		[...types, "weapon_any", "item_any", "material_any", "liquid_any", "sand_any"].forEach(cat => {
 		let placeholder = `{${cat}}`;
@@ -755,7 +758,11 @@
 			list = types
 			.filter(c => c.startsWith("sand_"))
 			.flatMap(c => materialsData[c] || []);
-		} else if (cat.startsWith("material_") || cat.startsWith("liquid_") || cat.startsWith("sand_")) {
+		}else if (cat === "food_any") {
+			list = types
+			.filter(c => c.startsWith("food_"))
+			.flatMap(c => materialsData[c] || []);
+		} else if (cat.startsWith("material_") || cat.startsWith("liquid_") || cat.startsWith("sand_") || cat.startsWith("food_") ) {
 			list = (materialsData[cat] || []);
 		} else if (cat === "item_any") {
 			list = types.flatMap(c => itemsData[c] || []);

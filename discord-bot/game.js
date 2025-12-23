@@ -34,7 +34,10 @@ class NoitaGame {
             "liquid_poison",
             "liquid_good",
             "liquid_bad",
-            "liquid_neutral"
+            "liquid_neutral",
+			"food_good",
+			"food_neutral",
+			"food_bad"
         ];
     }
 
@@ -276,7 +279,11 @@ class NoitaGame {
                 list = this.types
                     .filter(c => c.startsWith("sand_"))
                     .flatMap(c => this.materialsData[c] || []);
-            } else if (cat.startsWith("material_") || cat.startsWith("liquid_") || cat.startsWith("sand_")) {
+			}else if (cat === "food_any") {
+				list = this.types
+				.filter(c => c.startsWith("food_"))
+				.flatMap(c => this.materialsData[c] || []);
+			} else if (cat.startsWith("material_") || cat.startsWith("liquid_") || cat.startsWith("sand_") || cat.startsWith("food_") ) {
                 list = this.materialsData[cat] || [];
             } else if (cat === "item_any") {
                 list = this.types.flatMap(c => this.itemsData[c] || []);
