@@ -146,7 +146,7 @@ client.on('messageCreate', async (message) => {
         await handleAddFake(message);
     } else if (content.startsWith('.leaderboard') || content.startsWith('.lb')) {
         await handleLeaderboard(message);
-    } else if (content === '.stats') {
+    } else if (content.startsWith('.stats')) {
         await handleStats(message);
     }
 });
@@ -494,8 +494,6 @@ async function handleLeaderboard(message) {
         return b[sortField] - a[sortField];
     });
     
-    const top10 = allStats.slice(0, 10);
-    
     const sortNames = {
         'wins': 'Wins',
         'kills': 'Total Kills',
@@ -506,21 +504,55 @@ async function handleLeaderboard(message) {
         'maxkills': 'Most Kills (Single Game)'
     };
     
-    const fieldMap = {
-        'wins': 'wins',
-        'kills': 'kills',
-        'deaths': 'deaths',
-        'max_days': 'max_days',
-        'total_days': 'total_days',
-        'games_played': 'games_played'
-    };
+    const userId = message.author.id;
+    const userRank = allStats.findIndex(p => p.user_id === userId);
     
-    const leaderboardText = top10.map((player, i) => {
-        const rank = i + 1;
-        const name = player.username;
-        const value = player[sortField];
-        return `**${rank}.** ${name} - ${value} ${sortNames[sortBy].toLowerCase()}`;
-    }).join('\n');
+    let leaderboardText = '';
+    
+    if (userRank === -1) {
+        const top10 = allStats.slice(0, 10);
+        leaderboardText = top10.map((player, i) => {
+            const rank = i + 1;
+            const name = player.username;
+            const value = player[sortField];
+            return `**${rank}.** ${name} - ${value} ${sortNames[sortBy].toLowerCase()}`;
+        }).join('\n');
+    } else if (userRank < 10) {
+        const top10 = allStats.slice(0, 10);
+        leaderboardText = top10.map((player, i) => {
+            const rank = i + 1;
+            const name = player.username;
+            const value = player[sortField];
+            const isSelf = player.user_id === userId;
+            return `**${rank}. ${isSelf ? '**' : ''}${name}${isSelf ? '**' : ''} - ${value} ${sortNames[sortBy].toLowerCase()}**`;
+        }).join('\n');
+    } else {
+        const top10 = allStats.slice(0, 10);
+        const top10Text = top10.map((player, i) => {
+            const rank = i + 1;
+            const name = player.username;
+            const value = player[sortField];
+            return `**${rank}.** ${name} - ${value} ${sortNames[sortBy].toLowerCase()}`;
+        }).join('\n');
+        
+        const userEntry = allStats[userRank];
+        const aboveEntry = userRank > 0 ? allStats[userRank - 1] : null;
+        const belowEntry = userRank < allStats.length - 1 ? allStats[userRank + 1] : null;
+        
+        let contextText = '\n...\n';
+        
+        if (aboveEntry) {
+            contextText += `*${userRank}. ${aboveEntry.username} - ${aboveEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*\n`;
+        }
+        
+        contextText += `**${userRank + 1}. **${userEntry.username}** - ${userEntry[sortField]} ${sortNames[sortBy].toLowerCase()}**\n`;
+        
+        if (belowEntry) {
+            contextText += `*${userRank + 2}. ${belowEntry.username} - ${belowEntry[sortField]} ${sortNames[sortBy].toLowerCase()}*`;
+        }
+        
+        leaderboardText = top10Text + contextText;
+    }
     
     const leaderboardEmbed = new EmbedBuilder()
         .setTitle(`Noita Games Leaderboard`)
@@ -533,11 +565,43 @@ async function handleLeaderboard(message) {
 }
 
 async function handleStats(message) {
-    const userId = message.author.id;
+    let userId = message.author.id;
+    let username = message.author.displayName || message.author.username;
+    
+    const args = message.content.trim().split(/\s+/);
+    if (args.length > 1) {
+        const target = args.slice(1).join(' ');
+        
+        if (message.mentions.users.size > 0) {
+            const mentionedUser = message.mentions.users.first();
+            userId = mentionedUser.id;
+            username = mentionedUser.username;
+        } else if (/^\d{17,19}$/.test(target)) {
+            userId = target;
+            const userStats = db.prepare('SELECT username FROM player_stats WHERE user_id = ?').get(userId);
+            if (userStats) {
+                username = userStats.username;
+            }
+        } else {
+            const userStats = db.prepare('SELECT user_id, username FROM player_stats WHERE LOWER(username) = LOWER(?)').get(target);
+            if (userStats) {
+                userId = userStats.user_id;
+                username = userStats.username;
+            } else {
+                await message.reply(`Could not find stats for "${target}". Make sure they've played at least one game.`);
+                return;
+            }
+        }
+    }
+    
     const stats = db.prepare('SELECT * FROM player_stats WHERE user_id = ?').get(userId);
     
     if (!stats) {
-        await message.reply("You haven't played any games yet! Use '.join' to participate in the next Noita Games.");
+        if (args.length > 1) {
+            await message.reply(`No stats found for that user. They haven't played any games yet.`);
+        } else {
+            await message.reply("You haven't played any games yet! Use '.join' to participate in the next Noita Games.");
+        }
         return;
     }
     
@@ -560,6 +624,7 @@ async function handleStats(message) {
             { name: 'Avg Days/Game', value: avgDaysPerGame, inline: true },
             { name: 'Avg Kills/Game', value: avgKillsPerGame, inline: true }
         )
+        .setFooter({ text: 'Use .stats [@user|username|userid] to view someone else\'s stats' })
         .setTimestamp();
     
     await message.reply({ embeds: [statsEmbed] });
