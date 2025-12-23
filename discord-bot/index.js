@@ -536,7 +536,7 @@ async function handleLeaderboard(message) {
         }).join('\n');
         
         const userEntry = allStats[userRank];
-        const aboveEntry = userRank > 0 ? allStats[userRank - 1] : null;
+        const aboveEntry = (userRank > 0 && userRank !== 10) ? allStats[userRank - 1] : null;
         const belowEntry = userRank < allStats.length - 1 ? allStats[userRank + 1] : null;
         
         let contextText = '\n...\n';
