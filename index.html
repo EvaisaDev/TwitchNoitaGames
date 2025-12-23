@@ -429,6 +429,7 @@
         daysSinceEvent     = 0,
         consecutiveNoDeaths= 0,
         gameStarted        = false,
+        currentPhaseType   = null,
         leaderboardSort    = { key:null, asc:true };
 
     // DOM refs
@@ -523,7 +524,7 @@
       });
       eliminationOrder=[];
       currentDay=1; stage=0; daysSinceEvent=0; consecutiveNoDeaths=0;
-      killedThisDay=[]; deathEventsLog=[];
+      killedThisDay=[]; deathEventsLog=[]; currentPhaseType=null;
       playersGrid.style.display='none';
       btnStart.style.display='none';
       btnDebug.style.display='none';
@@ -585,6 +586,7 @@
       consecutiveNoDeaths=0;
       killedThisDay=[];
       deathEventsLog=[];
+      currentPhaseType=null;
     }
 
     async function nextPhase(){
@@ -646,7 +648,12 @@
     async function runPhase(type){
       eventLog.innerHTML='';
       let step=type;
-      if(type==='day'||type==='night') step=getStepType(type==='day');
+      if(type==='day'||type==='night') {
+        currentPhaseType=getStepType(type==='day');
+        step=currentPhaseType;
+      } else {
+        currentPhaseType=type;
+      }
       if(step==='feast'){
         const ev=eventsData.feast;
         phaseDesc.textContent=ev.description;

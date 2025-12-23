@@ -16,6 +16,7 @@ class NoitaGame {
         this.daysSinceEvent = 0;
         this.consecutiveNoDeaths = 0;
         this.lastPhaseHadDeaths = false;
+        this.currentPhaseType = null;
 
         this.types = [
             "weapon_blunt",
@@ -76,15 +77,15 @@ class NoitaGame {
                     color: phaseData.color || '#c70000'
                 };
             case 1:
-                phaseKey = this.getStepType(true);
-                if (phaseKey === 'feast') {
+                this.currentPhaseType = this.getStepType(true);
+                if (this.currentPhaseType === 'feast') {
                     phaseData = this.eventsData.feast;
                     return {
                         title: phaseData.title,
                         description: phaseData.description,
                         color: phaseData.color
                     };
-                } else if (phaseKey === 'arena') {
+                } else if (this.currentPhaseType === 'arena') {
                     const arenaEvents = this.eventsData.arena;
                     const ev = arenaEvents[Math.floor(Math.random() * arenaEvents.length)];
                     return {
@@ -135,7 +136,7 @@ class NoitaGame {
                 evObj = this.eventsData.bloodbath;
                 break;
             case 1:
-                const stepType = this.getStepType(true);
+                const stepType = this.currentPhaseType || 'day';
                 if (stepType === 'feast') {
                     evObj = this.eventsData.feast;
                 } else if (stepType === 'arena') {
