@@ -25,9 +25,18 @@ db.exec(`
         deaths INTEGER DEFAULT 0,
         max_days INTEGER DEFAULT 0,
         total_days INTEGER DEFAULT 0,
-        games_played INTEGER DEFAULT 0
+        games_played INTEGER DEFAULT 0,
+        max_kills_single_game INTEGER DEFAULT 0
     )
 `);
+
+// Migration: Add max_kills_single_game column if it doesn't exist
+try {
+    db.exec(`ALTER TABLE player_stats ADD COLUMN max_kills_single_game INTEGER DEFAULT 0`);
+    console.log('Added max_kills_single_game column to existing database');
+} catch (e) {
+    // Column already exists, ignore error
+}
 
 const client = new Client({
     intents: [
@@ -52,8 +61,8 @@ function initPlayerStats(userId, username) {
     
     if (!existing) {
         const insert = db.prepare(`
-            INSERT INTO player_stats (user_id, username, wins, kills, deaths, max_days, total_days, games_played)
-            VALUES (?, ?, 0, 0, 0, 0, 0, 0)
+            INSERT INTO player_stats (user_id, username, wins, kills, deaths, max_days, total_days, games_played, max_kills_single_game)
+            VALUES (?, ?, 0, 0, 0, 0, 0, 0, 0)
         `);
         insert.run(userId, username);
     } else {
@@ -137,6 +146,8 @@ client.on('messageCreate', async (message) => {
         await handleAddFake(message);
     } else if (content.startsWith('.leaderboard') || content.startsWith('.lb')) {
         await handleLeaderboard(message);
+    } else if (content === '.stats') {
+        await handleStats(message);
     }
 });
 
@@ -309,7 +320,7 @@ async function showResults(arenaChannel) {
         if (!userId.startsWith('fake_')) {
             initPlayerStats(userId, p.username);
             
-            const existing = db.prepare('SELECT max_days FROM player_stats WHERE user_id = ?').get(userId);
+            const existing = db.prepare('SELECT max_days, max_kills_single_game FROM player_stats WHERE user_id = ?').get(userId);
             
             const updates = {
                 increment: {
@@ -321,6 +332,11 @@ async function showResults(arenaChannel) {
             
             if (days > existing.max_days) {
                 updates.set = { max_days: days };
+            }
+            
+            if (p.kills > (existing.max_kills_single_game || 0)) {
+                if (!updates.set) updates.set = {};
+                updates.set.max_kills_single_game = p.kills;
             }
             
             if (p.alive) {
@@ -453,7 +469,8 @@ async function handleLeaderboard(message) {
             'deaths': 'deaths',
             'maxdays': 'max_days',
             'totaldays': 'total_days',
-            'games': 'games_played'
+            'games': 'games_played',
+            'maxkills': 'max_kills_single_game'
         };
         
         const requestedSort = args[1].toLowerCase();
@@ -485,7 +502,8 @@ async function handleLeaderboard(message) {
         'deaths': 'Deaths',
         'maxdays': 'Max Days Survived',
         'totaldays': 'Total Days',
-        'games': 'Games Played'
+        'games': 'Games Played',
+        'maxkills': 'Most Kills (Single Game)'
     };
     
     const fieldMap = {
@@ -508,10 +526,43 @@ async function handleLeaderboard(message) {
         .setTitle(`Noita Games Leaderboard`)
         .setDescription(`**Sorted by: ${sortNames[sortBy]}**\n\n${leaderboardText}`)
         .setColor(0xf1c40f)
-        .setFooter({ text: `Use .leaderboard [wins|kills|deaths|maxdays|totaldays|games]` })
+        .setFooter({ text: `Use .leaderboard [wins|kills|deaths|maxdays|totaldays|games|maxkills]` })
         .setTimestamp();
     
     await message.reply({ embeds: [leaderboardEmbed] });
+}
+
+async function handleStats(message) {
+    const userId = message.author.id;
+    const stats = db.prepare('SELECT * FROM player_stats WHERE user_id = ?').get(userId);
+    
+    if (!stats) {
+        await message.reply("You haven't played any games yet! Use '.join' to participate in the next Noita Games.");
+        return;
+    }
+    
+    const avgDaysPerGame = stats.games_played > 0 ? (stats.total_days / stats.games_played).toFixed(1) : 0;
+    const avgKillsPerGame = stats.games_played > 0 ? (stats.kills / stats.games_played).toFixed(1) : 0;
+    const winRate = stats.games_played > 0 ? ((stats.wins / stats.games_played) * 100).toFixed(1) : 0;
+    
+    const statsEmbed = new EmbedBuilder()
+        .setTitle(`${stats.username}'s Noita Games Stats`)
+        .setColor(0x3498db)
+        .addFields(
+            { name: '🏆 Wins', value: stats.wins.toString(), inline: true },
+            { name: '🎮 Games Played', value: stats.games_played.toString(), inline: true },
+            { name: '📊 Win Rate', value: `${winRate}%`, inline: true },
+            { name: '⚔️ Total Kills', value: stats.kills.toString(), inline: true },
+            { name: '💀 Deaths', value: stats.deaths.toString(), inline: true },
+            { name: '🔥 Best Kills (Single Game)', value: stats.max_kills_single_game.toString(), inline: true },
+            { name: '📅 Max Days Survived', value: stats.max_days.toString(), inline: true },
+            { name: '📆 Total Days', value: stats.total_days.toString(), inline: true },
+            { name: '📈 Avg Days/Game', value: avgDaysPerGame, inline: true },
+            { name: '⚡ Avg Kills/Game', value: avgKillsPerGame, inline: true }
+        )
+        .setTimestamp();
+    
+    await message.reply({ embeds: [statsEmbed] });
 }
 
 async function handleAddFake(message) {
