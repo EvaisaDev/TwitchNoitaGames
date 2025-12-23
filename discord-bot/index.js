@@ -104,12 +104,14 @@ let joinedPlayers = new Map();
 let joinTimer = null;
 let gameRunning = false;
 let recruitingPlayers = false;
+let startImmediately = false
 
 client.once('ready', async () => {
     console.log(`Logged in as ${client.user.tag}`);
     
     // Auto-start a game immediately on startup
-    await autoStartGames();
+	if (startImmediately)
+    	await autoStartGames();
     
     // Schedule games to start at the top of every hour
     function scheduleNextHourlyGame() {
