@@ -164,8 +164,8 @@ class NoitaGame {
 
     runEvents(evObj) {
         const aliveSet = new Set(this.participants.filter(p => p.alive));
-        const base = Math.floor(Math.random() * 3) + 2;
-        const factor = base + this.consecutiveNoDeaths + (this.stage === 0 ? 2 : 0);
+        const base = Math.floor(Math.random() * 3) + 1;
+        const factor = base + this.consecutiveNoDeaths + (this.stage === 0 ? 1 : 0);
         const events = [];
 
         const genericEvents = this.eventsData.generic || { nonfatal: [], fatal: [] };
@@ -182,7 +182,10 @@ class NoitaGame {
             
             let pool;
             if (isArenaEvent || isFeastEvent || isBloodbathEvent) {
-                const weightedPhasePool = Array(10).fill(null).flatMap(() => phasePool);
+                const multiplier = (phasePool.length > 0 && genericPool.length > 0) 
+                    ? Math.ceil((3 * genericPool.length) / phasePool.length)
+                    : 1;
+                const weightedPhasePool = Array(multiplier).fill(null).flatMap(() => phasePool);
                 pool = [...weightedPhasePool, ...genericPool];
             } else {
                 pool = [...phasePool, ...genericPool];
