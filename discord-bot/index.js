@@ -549,16 +549,16 @@ async function handleStats(message) {
         .setTitle(`${stats.username}'s Noita Games Stats`)
         .setColor(0x3498db)
         .addFields(
-            { name: '🏆 Wins', value: stats.wins.toString(), inline: true },
-            { name: '🎮 Games Played', value: stats.games_played.toString(), inline: true },
-            { name: '📊 Win Rate', value: `${winRate}%`, inline: true },
-            { name: '⚔️ Total Kills', value: stats.kills.toString(), inline: true },
-            { name: '💀 Deaths', value: stats.deaths.toString(), inline: true },
-            { name: '🔥 Best Kills (Single Game)', value: stats.max_kills_single_game.toString(), inline: true },
-            { name: '📅 Max Days Survived', value: stats.max_days.toString(), inline: true },
-            { name: '📆 Total Days', value: stats.total_days.toString(), inline: true },
-            { name: '📈 Avg Days/Game', value: avgDaysPerGame, inline: true },
-            { name: '⚡ Avg Kills/Game', value: avgKillsPerGame, inline: true }
+            { name: 'Wins', value: stats.wins.toString(), inline: true },
+            { name: 'Games Played', value: stats.games_played.toString(), inline: true },
+            { name: 'Win Rate', value: `${winRate}%`, inline: true },
+            { name: 'Total Kills', value: stats.kills.toString(), inline: true },
+            { name: 'Deaths', value: stats.deaths.toString(), inline: true },
+            { name: 'Best Kills (Single Game)', value: stats.max_kills_single_game.toString(), inline: true },
+            { name: 'Max Days Survived', value: stats.max_days.toString(), inline: true },
+            { name: 'Total Days', value: stats.total_days.toString(), inline: true },
+            { name: 'Avg Days/Game', value: avgDaysPerGame, inline: true },
+            { name: 'Avg Kills/Game', value: avgKillsPerGame, inline: true }
         )
         .setTimestamp();
     
