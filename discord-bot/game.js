@@ -211,7 +211,15 @@ class NoitaGame {
             
             if (!pool.length) break;
 
-            const action = pool[Math.floor(Math.random() * pool.length)];
+            const weightedPool = [];
+            pool.forEach(action => {
+                const weight = action.weight !== undefined ? action.weight : 1;
+                for (let i = 0; i < weight; i++) {
+                    weightedPool.push(action);
+                }
+            });
+
+            const action = weightedPool[Math.floor(Math.random() * weightedPool.length)];
             const pick = [];
             const avail = Array.from(aliveSet);
 
