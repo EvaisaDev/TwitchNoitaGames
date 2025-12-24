@@ -316,7 +316,8 @@
                 "killer": null,
                 "killed": [
                     0
-                ],
+                ]
+            },
             {
                 "msg": "{0} encounters a horde of Konna superimposed on top of each other, and does not manage to evade their collective assault.",
                 "tributes": 1,
