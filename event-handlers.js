@@ -60,6 +60,15 @@ var eventHandlers = {
             return `${newFormDisplay} won the Noita Games! wait.. thats not right.. ${originalDisplay} won? what?`;
         },
         
+        getWinnerMessagePlain: function(username, gameState) {
+            if (!gameState.polymorphedPlayers) return null;
+            
+            const polymorph = gameState.polymorphedPlayers.get(username);
+            if (!polymorph) return null;
+            
+            return `${polymorph.newForm} won the Noita Games! wait.. thats not right.. ${polymorph.originalName} won? what?`;
+        },
+        
         clearRound: function(gameState) {
             if (gameState.polymorphedPlayers) {
                 gameState.polymorphedPlayers.clear();

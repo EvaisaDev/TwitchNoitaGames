@@ -354,7 +354,7 @@ async function showResults(arenaChannel) {
     let title, description;
     if (survivors.length === 1) {
         if (eventHandlers && eventHandlers.polymorph && currentGame.gameState.polymorphedPlayers && currentGame.gameState.polymorphedPlayers.has(survivors[0].username)) {
-            title = eventHandlers.polymorph.getWinnerMessage(survivors[0].username, currentGame.gameState);
+            title = eventHandlers.polymorph.getWinnerMessagePlain(survivors[0].username, currentGame.gameState);
         } else {
             title = `${survivors[0].username} won the Noita Games!`;
         }
