@@ -223,8 +223,12 @@ class NoitaGame {
 
             let txt = action.msg;
             for (let i = 0; i < pick.length; i++) {
-                const displayName = this.getDisplayName(pick[i].username);
-                const mention = pick[i].id.startsWith('fake_') ? displayName : `<@${pick[i].id}>`;
+                let mention;
+                if (eventHandlers && eventHandlers.polymorph && this.gameState.polymorphedPlayers && this.gameState.polymorphedPlayers.has(pick[i].username)) {
+                    mention = eventHandlers.polymorph.getDisplayMention(pick[i].username, this.gameState);
+                } else {
+                    mention = pick[i].id.startsWith('fake_') ? pick[i].username : `<@${pick[i].id}>`;
+                }
                 txt = txt.replace(new RegExp(`\\{${i}\\}`, 'g'), mention);
             }
 
