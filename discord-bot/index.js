@@ -8,6 +8,7 @@ const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'config.json'), '
 const eventsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'events.json'), 'utf8'));
 const itemsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'items.json'), 'utf8'));
 const materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'materials.json'), 'utf8'));
+const eventHandlers = require('../event-handlers.js');
 
 const dbPath = path.join(__dirname, 'data');
 if (!fs.existsSync(dbPath)) {
