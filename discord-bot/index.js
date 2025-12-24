@@ -343,6 +343,18 @@ async function showResults(arenaChannel) {
             
             if (p.alive) {
                 updates.increment.wins = 1;
+                
+                if (eventHandlers && eventHandlers.polymorph && currentGame.gameState.polymorphedPlayers && currentGame.gameState.polymorphedPlayers.has(p.username)) {
+                    const polymorph = currentGame.gameState.polymorphedPlayers.get(p.username);
+                    if (polymorph && polymorph.newFormId && !polymorph.newFormId.startsWith('fake_')) {
+                        const newFormPlayer = currentGame.participants.find(player => player.id === polymorph.newFormId);
+                        if (newFormPlayer) {
+                            initPlayerStats(polymorph.newFormId, polymorph.newForm);
+                            const newFormUpdates = { increment: { wins: 1 } };
+                            updatePlayerStats(polymorph.newFormId, newFormUpdates);
+                        }
+                    }
+                }
             } else {
                 updates.increment.deaths = 1;
             }

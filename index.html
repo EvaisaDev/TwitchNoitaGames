@@ -891,6 +891,14 @@
         globalStats[p.username].totalDays += days;
         if(days>globalStats[p.username].maxDays) globalStats[p.username].maxDays=days;
         globalStats[p.username].wins  += p.alive?1:0;
+        
+        if(p.alive && eventHandlersLoaded && window.eventHandlers && window.eventHandlers.polymorph && polymorphedPlayers.has(p.username)) {
+          const polymorph = polymorphedPlayers.get(p.username);
+          if(polymorph && polymorph.newForm) {
+            initGlobal(polymorph.newForm);
+            globalStats[polymorph.newForm].wins += 1;
+          }
+        }
       });
       saveGlobalStats();
 
