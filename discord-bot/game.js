@@ -1,3 +1,5 @@
+const eventHandlers = require('../event-handlers');
+
 function escapeRegExp(s) {
     return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -17,6 +19,10 @@ class NoitaGame {
         this.consecutiveNoDeaths = 0;
         this.lastPhaseHadDeaths = false;
         this.currentPhaseType = null;
+        
+        this.gameState = {
+            polymorphedPlayers: new Map()
+        };
 
         this.types = [
             "weapon_blunt",
@@ -66,6 +72,13 @@ class NoitaGame {
 
     shouldShowFallen() {
         return this.lastPhaseHadDeaths;
+    }
+    
+    getDisplayName(username) {
+        if (eventHandlers && eventHandlers.polymorph && this.gameState.polymorphedPlayers && this.gameState.polymorphedPlayers.has(username)) {
+            return eventHandlers.polymorph.getDisplayName(username, this.gameState);
+        }
+        return username;
     }
 
     getNextPhaseInfo() {
@@ -210,12 +223,20 @@ class NoitaGame {
 
             let txt = action.msg;
             for (let i = 0; i < pick.length; i++) {
-                const mention = pick[i].id.startsWith('fake_') ? pick[i].username : `<@${pick[i].id}>`;
+                const displayName = this.getDisplayName(pick[i].username);
+                const mention = pick[i].id.startsWith('fake_') ? displayName : `<@${pick[i].id}>`;
                 txt = txt.replace(new RegExp(`\\{${i}\\}`, 'g'), mention);
             }
 
             const killsCount = Array.isArray(action.killed) ? action.killed.length : 0;
             txt = this.replacePlaceholders(txt, killsCount);
+            
+            if (action.customHandler && eventHandlers && eventHandlers[action.customHandler] && typeof eventHandlers[action.customHandler].execute === 'function') {
+                eventHandlers[action.customHandler].execute({
+                    picks: pick,
+                    currentRound: this.currentDay
+                }, this.gameState);
+            }
 
             if (action.killed && action.killed.length > 0) {
                 if (action.killer) {

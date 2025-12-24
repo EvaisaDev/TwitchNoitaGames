@@ -2550,6 +2550,11 @@
 			{
                 "msg": "{0} eats some fungus off the ground and has the best trip of their life.",
                 "tributes": 1
+            },
+            {
+                "msg": "{0} drank some chaotic polymorphine and was polymorphed into {1}",
+                "tributes": 2,
+                "customHandler": "polymorph"
             }
         ],
         "fatal": [

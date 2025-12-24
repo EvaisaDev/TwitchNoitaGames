@@ -294,7 +294,7 @@ async function runGameLoop(arenaChannel) {
         if (fallen.length > 0 && currentGame.shouldShowFallen()) {
             const fallenEmbed = new EmbedBuilder()
                 .setTitle(`Fallen Witches`)
-                .setDescription(`${fallen.length} nuke${fallen.length !== 1 ? 's' : ''} can be heard going off in the distance.\n\n${fallen.map(name => `- ${name}`).join('\n')}`)
+                .setDescription(`${fallen.length} nuke${fallen.length !== 1 ? 's' : ''} can be heard going off in the distance.\n\n${fallen.map(name => `- ${currentGame.getDisplayName(name)}`).join('\n')}`)
                 .setColor(0x95a5a6);
 
             await arenaChannel.send({ embeds: [fallenEmbed] });
@@ -353,7 +353,11 @@ async function showResults(arenaChannel) {
 
     let title, description;
     if (survivors.length === 1) {
-        title = `${survivors[0].username} won the Noita Games!`;
+        if (eventHandlers && eventHandlers.polymorph && currentGame.gameState.polymorphedPlayers && currentGame.gameState.polymorphedPlayers.has(survivors[0].username)) {
+            title = eventHandlers.polymorph.getWinnerMessage(survivors[0].username, currentGame.gameState);
+        } else {
+            title = `${survivors[0].username} won the Noita Games!`;
+        }
         description = `After ${currentGame.currentDay} days of battle, a winner emerges!`;
     } else {
         title = 'No one survived the Noita Games!';
@@ -361,7 +365,7 @@ async function showResults(arenaChannel) {
     }
 
     const placementText = placements.slice(0, 10).map((p, i) => 
-        `**#${i + 1}** ${p.username} - ${p.kills} kill${p.kills !== 1 ? 's' : ''}`
+        `**#${i + 1}** ${currentGame.getDisplayName(p.username)} - ${p.kills} kill${p.kills !== 1 ? 's' : ''}`
     ).join('\n');
 
     const resultsEmbed = new EmbedBuilder()

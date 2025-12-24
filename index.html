@@ -389,7 +389,7 @@
     // escape helper
     function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 
-    const RENDER_DELAY      = 300;
+    const RENDER_DELAY      = 10;
     const fakeAvatars       = ['images/pfp1.png','images/pfp2.png','images/pfp3.png','images/pfp4.png','images/pfp5.png','images/pfp6.png'];
     const adjectives        = ['Iron','Silver','Golden','Dusky','Silent','Swift','Fierce','Mystic','Crimson','Shadow'];
     const nouns             = ['Wolf','Raven','Phoenix','Dragon','Saber','Viper','Falcon','Stalker','Hunter','Wraith'];
@@ -457,6 +457,27 @@
     const closeOverlay   = document.getElementById('closeOverlay');
     const lbTableBody    = document.querySelector('#leaderboardTable tbody');
     const lbHeaders      = document.querySelectorAll('#leaderboardTable th');
+
+    let eventHandlersLoaded = false;
+
+    const script = document.createElement('script');
+    script.src = 'event-handlers.js';
+    script.onload = () => {
+      if (typeof window.eventHandlers !== 'undefined') {
+        eventHandlersLoaded = true;
+      }
+    };
+    script.onerror = (err) => console.error('Failed to load event handlers:', err);
+    document.head.appendChild(script);
+
+    let polymorphedPlayers = new Map();
+    
+    function getDisplayName(username) {
+      if (eventHandlersLoaded && window.eventHandlers && window.eventHandlers.polymorph && polymorphedPlayers.has(username)) {
+        return window.eventHandlers.polymorph.getDisplayName(username, { polymorphedPlayers });
+      }
+      return username;
+    }
 
     // Load events + weapons JSON
     Promise.all([
@@ -587,6 +608,7 @@
       killedThisDay=[];
       deathEventsLog=[];
       currentPhaseType=null;
+      polymorphedPlayers.clear();
     }
 
     async function nextPhase(){
@@ -623,10 +645,11 @@
       grid.className='avatars';
       killedThisDay.forEach(u=>{
         const p=participants.find(x=>x.username===u);
+        const displayName = getDisplayName(u);
         const wrap=document.createElement('div'); wrap.className='avatarWrap';
         const img=document.createElement('img'); img.src=p.avatar; img.className='dead';
         const nmC=document.createElement('div'); nmC.className='tooltip-container text';
-        const sp=document.createElement('span'); sp.textContent=u; sp.style.color=p.color;
+        const sp=document.createElement('span'); sp.textContent=displayName; sp.style.color=p.color;
         const tip=document.createElement('div'); tip.className='tooltip-box';
         tip.innerText=getUserTooltipText(u,p.kills,day);
         nmC.append(sp,tip);
@@ -716,10 +739,18 @@
 
         let txt = action.msg;
         for(let i=0;i<pick.length;i++){
-          txt = txt.replace(new RegExp(`\\{${i}\\}`, 'g'), pick[i].username);
+          const displayName = getDisplayName(pick[i].username);
+          txt = txt.replace(new RegExp(`\\{${i}\\}`, 'g'), displayName);
         }
 
         const killsCount = Array.isArray(action.killed)? action.killed.length : 0;
+        
+        if (action.customHandler && eventHandlersLoaded && window.eventHandlers && window.eventHandlers[action.customHandler] && typeof window.eventHandlers[action.customHandler].execute === 'function') {
+          window.eventHandlers[action.customHandler].execute({
+            picks: pick,
+            currentRound: currentDay
+          }, { polymorphedPlayers });
+        }
 		const types = [
 			"weapon_blunt",
 			"weapon_cutting",
@@ -814,8 +845,9 @@
         if(m.killed.length && !m.hidden){
           let rec=m.text;
           m.picks.forEach(p=>{
-            const col=`<span style="color:${p.color}">${p.username}</span>`;
-            rec=rec.split(p.username).join(col);
+            const displayName = getDisplayName(p.username);
+            const col=`<span style="color:${p.color}">${displayName}</span>`;
+            rec=rec.split(displayName).join(col);
           });
           deathEventsLog.push(rec);
         }
@@ -835,8 +867,9 @@
           txtEl.className='text';
           let html=m.text;
           m.picks.forEach(p=>{
-            const mark=`<span class="tooltip-container"><span style="color:${p.color}">${p.username}</span><div class="tooltip-box">${getUserTooltipText(p.username,p.kills,currentDay)}</div></span>`;
-            html=html.split(p.username).join(mark);
+            const displayName = getDisplayName(p.username);
+            const mark=`<span class="tooltip-container"><span style="color:${p.color}">${displayName}</span><div class="tooltip-box">${getUserTooltipText(p.username,p.kills,currentDay)}</div></span>`;
+            html=html.split(displayName).join(mark);
           });
           txtEl.innerHTML=html;
           evEl.append(avs,txtEl);
@@ -864,7 +897,11 @@
       const surv = participants.filter(p=>p.alive);
       let title='',avatar='';
       if(surv.length===1){
-        title=`${surv[0].username} won the Noita Games!`;
+        if (eventHandlersLoaded && window.eventHandlers && window.eventHandlers.polymorph && polymorphedPlayers.has(surv[0].username)) {
+          title = window.eventHandlers.polymorph.getWinnerMessage(surv[0].username, { polymorphedPlayers });
+        } else {
+          title = `${surv[0].username} won the Noita Games!`;
+        }
         avatar=surv[0].avatar;
       } else {
         title='No one survived the Noita Games!';
@@ -880,13 +917,14 @@
       finalOrder.forEach((u,i)=>{
         const p=participants.find(x=>x.username===u);
         if(!p) return;
+        const displayName = getDisplayName(u);
         const wrap=document.createElement('div');
         wrap.className='placement'+(p.alive?'':' dead');
         const img=document.createElement('img'); img.src=p.avatar;
         const rank=document.createElement('div'); rank.className='rank';
         rank.textContent=`#${i+1}`;
         const nmC=document.createElement('div'); nmC.className='name tooltip-container';
-        const sp=document.createElement('span'); sp.textContent=u; sp.style.color=p.color;
+        const sp=document.createElement('span'); sp.textContent=displayName; sp.style.color=p.color;
         const tip=document.createElement('div'); tip.className='tooltip-box';
         tip.innerText=getUserTooltipText(u,p.kills,p.deathDay||(currentDay-1));
         nmC.append(sp,tip);
