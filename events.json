@@ -105,7 +105,7 @@
                 "tributes": 1
             },
             {
-                "msg": "{0} pets a hamis.",
+                "msg": "{0} pets a hämis.",
                 "tributes": 1
             },
             {
@@ -309,7 +309,100 @@
                 "killed": [
                     1
                 ]
+            },
+            {
+                "msg": "{0} accidentally fires their storage wand.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ],
+            {
+                "msg": "{0} encounters a horde of Konna superimposed on top of each other, and does not manage to evade their collective assault.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} encounters a horde of Hämikset superimposed on top of each other, and does not manage to evade their collective assault.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0}, {1}, {2} and {3} encounter a Kummitus with a Wand of Multitudes. None survive.",
+                "tributes": 4,
+                "killer": null,
+                "killed": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "msg": "{0} tries to drink an Acceleratium potion while wading in slime.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} is polymorphed into a fish and dies from fall damage.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} finds and opens an underwater chest! It contains an Ukkoskivi.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} gets No Wand Tinkering from Perk Gambling. They decide to just end it then and there.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} tried to pet the Hämis one too many times.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} tried to kick a shiny orb one too many times.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} accidentally kicks while holding a Tannerkivi, and is crushed to death.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
             }
+
+            
+            
         ]
     },
     "day": {
@@ -701,6 +794,14 @@
             {
                 "msg": "{0} and {1} talk about how fair this world is.",
                 "tributes": 2
+            },
+            {
+                "msg": "{0} uses a Kammi to summon a cozy hut, and spends the night in comfort.",
+                "tributes": 1
+            },
+            {
+                "msg": "{0} uses a Kammi to summon a cozy hut. They graciously allow {1} and {2} to stay the night.",
+                "tributes": 3
             }
         ],
         "fatal": [
@@ -771,6 +872,14 @@
             },
             {
                 "msg": "{0} tinkers with their wand. {0} shouldn't have put Touch of Gold there.",
+                "tributes": 1,
+                "killer": null,
+                "killed": [
+                    0
+                ]
+            },
+            {
+                "msg": "{0} uses a Kammi to summon a cozy hut, but accidentally sets off an explosive box inside.",
                 "tributes": 1,
                 "killer": null,
                 "killed": [
@@ -933,6 +1042,10 @@
                 },
                 {
                     "msg": "{0} digs out of the holy mountain.",
+                    "tributes": 1
+                },
+                {
+                    "msg": "{0} manages to sneak out of the holy mountain while Stevari is busy shooting at fish.",
                     "tributes": 1
                 }
             ],
