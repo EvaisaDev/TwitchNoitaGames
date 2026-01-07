@@ -14,9 +14,9 @@ var eventHandlers = {
             
             gameState.polymorphedPlayers.set(originalPlayer.username, {
                 originalName: originalPlayer.username,
-                originalId: originalPlayer.id,
+                originalId: String(originalPlayer.id),
                 newForm: newForm.username,
-                newFormId: newForm.id,
+                newFormId: String(newForm.id),
                 round: currentRound
             });
         },

@@ -57,6 +57,7 @@ function randomName() {
 }
 
 function initPlayerStats(userId, username) {
+    userId = String(userId);
     const stmt = db.prepare('SELECT user_id FROM player_stats WHERE user_id = ?');
     const existing = stmt.get(userId);
     
@@ -73,6 +74,7 @@ function initPlayerStats(userId, username) {
 }
 
 function updatePlayerStats(userId, updates) {
+    userId = String(userId);
     const existing = db.prepare('SELECT * FROM player_stats WHERE user_id = ?').get(userId);
     if (!existing) return;
     
@@ -249,7 +251,7 @@ async function startGame() {
     recruitingPlayers = false;
 
     const participants = Array.from(joinedPlayers.entries()).map(([id, name]) => ({
-        id,
+        id: String(id),
         username: name,
         alive: true,
         kills: 0,
@@ -422,7 +424,7 @@ async function handleJoin(message) {
         return;
     }
 
-    joinedPlayers.set(message.author.id, message.author.displayName || message.author.username);
+    joinedPlayers.set(String(message.author.id), message.author.displayName || message.author.username);
 
 
     await message.reply("You have volunteered as a tribute! Good luck!");
@@ -523,8 +525,8 @@ async function handleLeaderboard(message) {
         'maxkills': 'Most Kills (Single Game)'
     };
     
-    const userId = message.author.id;
-    const userRank = allStats.findIndex(p => p.user_id === userId);
+    const userId = String(message.author.id);
+    const userRank = allStats.findIndex(p => p.user_id === String(userId));
     
     let leaderboardText = '';
     
@@ -588,7 +590,7 @@ async function handleLeaderboard(message) {
 }
 
 async function handleStats(message) {
-    let userId = message.author.id;
+    let userId = String(message.author.id);
     let username = message.author.displayName || message.author.username;
     
     const args = message.content.trim().split(/\s+/);
@@ -597,7 +599,7 @@ async function handleStats(message) {
         
         if (message.mentions.users.size > 0) {
             const mentionedUser = message.mentions.users.first();
-            userId = mentionedUser.id;
+            userId = String(mentionedUser.id);
             username = mentionedUser.username;
         } else if (/^\d{17,19}$/.test(target)) {
             userId = target;
@@ -678,7 +680,7 @@ async function handleAddFake(message) {
         } while (existingNames.has(name));
         
         const fakeId = `fake_${Date.now()}_${i}`;
-        joinedPlayers.set(fakeId, name);
+        joinedPlayers.set(String(fakeId), name);
         existingNames.add(name);
         addedCount++;
     }
